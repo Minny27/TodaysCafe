@@ -24,12 +24,12 @@ class ViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelega
         }
     }
     
-    
     @IBOutlet weak var myPageControl: FSPageControl! {
         didSet {
             self.myPageControl.numberOfPages = self.imageNmaes.count
             self.myPageControl.contentHorizontalAlignment = .center
             self.myPageControl.itemSpacing = 15
+//            self.myPageControl.backgroundColor = .gray
 //            self.myPageControl.interitemSpacing = 16
 
         }
@@ -43,36 +43,68 @@ class ViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelega
         self.myPagerView.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        print("ViewController - viewWillAppear() called")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("ViewController - viewDidAppear() called")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print("ViewController - viewWillDisappear() called")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("ViewController - viewDidDisappear() called")
+    }
+    
     func numberOfItems(in pagerView: FSPagerView) -> Int {
         return imageNmaes.count
     }
     
-
+//    private func addBackgroundOverlay() -> UIView {
+//        let BackgroundOverlay = UIView()
+//        BackgroundOverlay.frame = CGRect(x: self.myPagerView.frame.maxX, y: self.myPagerView.frame.maxY, width: self.myPagerView.bounds.size.width, height: self.myPagerView.bounds.size.height)
+//        BackgroundOverlay.backgroundColor = .black
+//        BackgroundOverlay.alpha = 0.7
+//
+//        return BackgroundOverlay
+//    }
+    
+//    private func addCenterLabel(_ index: Int) -> UILabel {
+//        let centerLabel = UILabel(frame: CGRect(x: 60, y: self.myPagerView.bounds.size.height / 2 - 40, width: 300, height: 50))
+////        centerLabel.sizeToFit()
+//        centerLabel.baselineAdjustment = .alignCenters
+//        centerLabel.text = self.text[index]
+//        centerLabel.font = UIFont.systemFont(ofSize: 20)
+//        centerLabel.textColor = .white
+//        centerLabel.textAlignment = .center
+//
+//        return centerLabel
+//    }
+    
+    
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         print( "ViewController - pagerView() called")
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
         cell.imageView?.image = UIImage(named: self.imageNmaes[index])
-        cell.imageView?.contentMode = .scaleAspectFill
         cell.textLabel?.text = text[index]
-        cell.textLabel?.textAlignment = .center
-        cell.textLabel?.backgroundColor = .clear
-
+        cell.textLabel?.numberOfLines = 2
         
         return cell
     }
-    
+
     func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
-        self.myPageControl.currentPage = pagerView.currentIndex
+        self.myPageControl.currentPage = targetIndex
     }
     
     func pagerViewDidEndScrollAnimation(_ pagerView: FSPagerView) {
-        self.myPageControl.currentPage = myPagerView.currentIndex
+        self.myPageControl.currentPage = pagerView.currentIndex
     }
     
     func pagerView(_ pagerView: FSPagerView, shouldHighlightItemAt index: Int) -> Bool {
         return false
     }
-
-
 }
 
