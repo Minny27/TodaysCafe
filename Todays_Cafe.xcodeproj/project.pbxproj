@@ -11,6 +11,9 @@
 		5604FD1626A1DA0F004DC9AF /* b.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5604FD1326A1DA0F004DC9AF /* b.jpg */; };
 		5604FD1726A1DA0F004DC9AF /* a.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5604FD1426A1DA0F004DC9AF /* a.jpg */; };
 		5604FD1826A1DA0F004DC9AF /* c.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5604FD1526A1DA0F004DC9AF /* c.jpg */; };
+		5615B3AF26A91A58005BCE25 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5615B3AE26A91A58005BCE25 /* Tag.swift */; };
+		5615B3B226A91C39005BCE25 /* TagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5615B3B126A91C39005BCE25 /* TagViewModel.swift */; };
+		5615B3BB26A94454005BCE25 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5615B3BA26A94454005BCE25 /* CollectionViewCell.swift */; };
 		56734CCF26A15F87006EB938 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56734CCE26A15F87006EB938 /* AppDelegate.swift */; };
 		56734CD126A15F87006EB938 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56734CD026A15F87006EB938 /* SceneDelegate.swift */; };
 		56734CD326A15F87006EB938 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56734CD226A15F87006EB938 /* ViewController.swift */; };
@@ -21,9 +24,12 @@
 
 /* Begin PBXFileReference section */
 		302FE33CA63BE0C038676A8F /* Pods_Todays_Cafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Todays_Cafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5604FD1326A1DA0F004DC9AF /* b.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = b.jpg; path = Resources/b.jpg; sourceTree = "<group>"; };
-		5604FD1426A1DA0F004DC9AF /* a.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = a.jpg; path = Resources/a.jpg; sourceTree = "<group>"; };
-		5604FD1526A1DA0F004DC9AF /* c.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = c.jpg; path = Resources/c.jpg; sourceTree = "<group>"; };
+		5604FD1326A1DA0F004DC9AF /* b.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = b.jpg; sourceTree = "<group>"; };
+		5604FD1426A1DA0F004DC9AF /* a.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = a.jpg; sourceTree = "<group>"; };
+		5604FD1526A1DA0F004DC9AF /* c.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = c.jpg; sourceTree = "<group>"; };
+		5615B3AE26A91A58005BCE25 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		5615B3B126A91C39005BCE25 /* TagViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewModel.swift; sourceTree = "<group>"; };
+		5615B3BA26A94454005BCE25 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		56734CCB26A15F87006EB938 /* Todays_Cafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todays_Cafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56734CCE26A15F87006EB938 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56734CD026A15F87006EB938 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +66,9 @@
 		5604FD1226A1D953004DC9AF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5604FD1426A1DA0F004DC9AF /* a.jpg */,
+				5604FD1326A1DA0F004DC9AF /* b.jpg */,
+				5604FD1526A1DA0F004DC9AF /* c.jpg */,
 				56734CD726A15F88006EB938 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -86,18 +95,58 @@
 		56734CCD26A15F87006EB938 /* Todays_Cafe */ = {
 			isa = PBXGroup;
 			children = (
-				5604FD1426A1DA0F004DC9AF /* a.jpg */,
-				5604FD1326A1DA0F004DC9AF /* b.jpg */,
-				5604FD1526A1DA0F004DC9AF /* c.jpg */,
-				5604FD1226A1D953004DC9AF /* Resources */,
-				56734CCE26A15F87006EB938 /* AppDelegate.swift */,
-				56734CD026A15F87006EB938 /* SceneDelegate.swift */,
-				56734CD226A15F87006EB938 /* ViewController.swift */,
-				56734CD426A15F87006EB938 /* Main.storyboard */,
-				56734CD926A15F88006EB938 /* LaunchScreen.storyboard */,
 				56734CDC26A15F88006EB938 /* Info.plist */,
+				569FB48326A7E72F00A93B08 /* AppDelegate */,
+				569FB48126A7E68200A93B08 /* Models */,
+				569FB48226A7E6A400A93B08 /* VIewModels */,
+				569FB47F26A7E65100A93B08 /* Views */,
+				569FB48026A7E65B00A93B08 /* Controllers */,
+				5604FD1226A1D953004DC9AF /* Resources */,
 			);
 			path = Todays_Cafe;
+			sourceTree = "<group>";
+		};
+		569FB47F26A7E65100A93B08 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				56734CD926A15F88006EB938 /* LaunchScreen.storyboard */,
+				56734CD426A15F87006EB938 /* Main.storyboard */,
+				5615B3BA26A94454005BCE25 /* CollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		569FB48026A7E65B00A93B08 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				56734CD226A15F87006EB938 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		569FB48126A7E68200A93B08 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5615B3AE26A91A58005BCE25 /* Tag.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		569FB48226A7E6A400A93B08 /* VIewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5615B3B126A91C39005BCE25 /* TagViewModel.swift */,
+			);
+			path = VIewModels;
+			sourceTree = "<group>";
+		};
+		569FB48326A7E72F00A93B08 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				56734CCE26A15F87006EB938 /* AppDelegate.swift */,
+				56734CD026A15F87006EB938 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		E1D7C5127BFA313E49D2C483 /* Frameworks */ = {
@@ -225,6 +274,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5615B3B226A91C39005BCE25 /* TagViewModel.swift in Sources */,
+				5615B3AF26A91A58005BCE25 /* Tag.swift in Sources */,
+				5615B3BB26A94454005BCE25 /* CollectionViewCell.swift in Sources */,
 				56734CD326A15F87006EB938 /* ViewController.swift in Sources */,
 				56734CCF26A15F87006EB938 /* AppDelegate.swift in Sources */,
 				56734CD126A15F87006EB938 /* SceneDelegate.swift in Sources */,
