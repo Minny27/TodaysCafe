@@ -8,11 +8,11 @@
 import UIKit
 import FSPagerView
 
-class ViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate {
+class ViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     
     fileprivate let imageNmaes = ["a.jpg", "b.jpg", "c.jpg"]
     private let text = ["솔직 담백한 카페 리뷰를 바탕으로\n나만의 카페를 추천해드립니다.", "우리 서비스가 짱이에요!!", "무~야~호!"]
-    
+    let tagViewModel = TagViewModel()
     
     @IBOutlet weak var myPagerView: FSPagerView! {
         didSet {
@@ -35,7 +35,7 @@ class ViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelega
         }
     }
     
-    
+    // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         print( "ViewController - viewDidLoad() called")
@@ -63,28 +63,21 @@ class ViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelega
         return imageNmaes.count
     }
     
-//    private func addBackgroundOverlay() -> UIView {
-//        let BackgroundOverlay = UIView()
-//        BackgroundOverlay.frame = CGRect(x: self.myPagerView.frame.maxX, y: self.myPagerView.frame.maxY, width: self.myPagerView.bounds.size.width, height: self.myPagerView.bounds.size.height)
-//        BackgroundOverlay.backgroundColor = .black
-//        BackgroundOverlay.alpha = 0.7
-//
-//        return BackgroundOverlay
-//    }
+    // MARK: - CollectionView
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return tagViewModel.countTagList
+    }
     
-//    private func addCenterLabel(_ index: Int) -> UILabel {
-//        let centerLabel = UILabel(frame: CGRect(x: 60, y: self.myPagerView.bounds.size.height / 2 - 40, width: 300, height: 50))
-////        centerLabel.sizeToFit()
-//        centerLabel.baselineAdjustment = .alignCenters
-//        centerLabel.text = self.text[index]
-//        centerLabel.font = UIFont.systemFont(ofSize: 20)
-//        centerLabel.textColor = .white
-//        centerLabel.textAlignment = .center
-//
-//        return centerLabel
-//    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as?  CollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        let tagInfo = tagViewModel.tagInfo(at: indexPath.item)
+        cell.update(tagInfo: tagInfo)
+        return cell
+    }
     
-    
+    // MARK:  - PagerView
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         print( "ViewController - pagerView() called")
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
@@ -107,4 +100,3 @@ class ViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelega
         return false
     }
 }
-
