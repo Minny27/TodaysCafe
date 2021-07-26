@@ -70,6 +70,7 @@
 				5604FD1326A1DA0F004DC9AF /* b.jpg */,
 				5604FD1526A1DA0F004DC9AF /* c.jpg */,
 				56734CD726A15F88006EB938 /* Assets.xcassets */,
+				56734CDC26A15F88006EB938 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -95,7 +96,6 @@
 		56734CCD26A15F87006EB938 /* Todays_Cafe */ = {
 			isa = PBXGroup;
 			children = (
-				56734CDC26A15F88006EB938 /* Info.plist */,
 				569FB48326A7E72F00A93B08 /* AppDelegate */,
 				569FB48126A7E68200A93B08 /* Models */,
 				569FB48226A7E6A400A93B08 /* VIewModels */,
