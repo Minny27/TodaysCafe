@@ -64,14 +64,14 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="BED-TK-vVQ" customClass="CollectionViewCell" customModule="Todays_Cafe" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionViewCell" id="BED-TK-vVQ" userLabel="CollectionViewCell" customClass="CollectionViewCell" customModule="Todays_Cafe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Fjh-Vl-9Dd">
                                             <rect key="frame" x="0.0" y="0.0" width="140" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RoD-sl-YH3">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RoD-sl-YH3" userLabel="TagLabel">
                                                     <rect key="frame" x="0.0" y="0.0" width="140" height="50"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <color key="textColor" systemColor="systemTealColor"/>
@@ -97,14 +97,59 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="y4R-h7-CmW"/>
                                 </connections>
                             </collectionView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lHy-jr-LUy" userLabel="SearchTableView">
+                                <rect key="frame" x="0.0" y="544" width="414" height="150"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="9QY-aX-ReX"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableViewCell" id="L4J-tv-0Qu" userLabel="TableViewCell" customClass="TableViewCell" customModule="Todays_Cafe">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="22.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L4J-tv-0Qu" id="kvr-Bh-nte">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="22.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jae-Q3-f8e" userLabel="SearchLabel">
+                                                    <rect key="frame" x="20" y="11" width="374" height="0.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <searchBar contentMode="redraw" id="513-6I-QCV">
+                                                    <rect key="frame" x="0.0" y="-11" width="414" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </searchBar>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Jae-Q3-f8e" firstAttribute="top" secondItem="kvr-Bh-nte" secondAttribute="topMargin" id="5YJ-at-XGX"/>
+                                                <constraint firstItem="Jae-Q3-f8e" firstAttribute="leading" secondItem="kvr-Bh-nte" secondAttribute="leadingMargin" id="HiW-Sc-Tc6"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Jae-Q3-f8e" secondAttribute="trailing" id="Rxg-f6-dUY"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Jae-Q3-f8e" secondAttribute="bottom" id="tYG-l2-ixE"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="searchLabel" destination="Jae-Q3-f8e" id="bWV-GV-YVA"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="VCM-r7-eaP"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HbY-ZW-wfs" secondAttribute="trailing" constant="57" id="1Fe-8S-foh"/>
                             <constraint firstItem="HbY-ZW-wfs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="4aa-Rc-d9S"/>
+                            <constraint firstItem="lHy-jr-LUy" firstAttribute="top" secondItem="HbY-ZW-wfs" secondAttribute="bottom" constant="40" id="7JD-4Z-uDD"/>
                             <constraint firstItem="NvP-qe-eVB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="TMq-qg-7wD"/>
                             <constraint firstItem="HbY-ZW-wfs" firstAttribute="top" secondItem="NvP-qe-eVB" secondAttribute="bottom" constant="40" id="TRd-aW-mfq"/>
+                            <constraint firstItem="lHy-jr-LUy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WHE-MW-qck"/>
+                            <constraint firstItem="lHy-jr-LUy" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eyj-st-ZYb"/>
                             <constraint firstItem="NvP-qe-eVB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vGJ-Hb-RtI"/>
                             <constraint firstItem="NvP-qe-eVB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wqA-iB-bBN"/>
                         </constraints>
