@@ -8,11 +8,11 @@
 import UIKit
 import FSPagerView
 
-class ViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
+class ViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDataSource {
     
-    fileprivate let imageNmaes = ["a.jpg", "b.jpg", "c.jpg"]
-    private let text = ["솔직 담백한 카페 리뷰를 바탕으로\n나만의 카페를 추천해드립니다.", "우리 서비스가 짱이에요!!", "무~야~호!"]
+    let bannerViewModel = BannerViewModel()
     let tagViewModel = TagViewModel()
+    let searchViewModel = SearchViewModel()
     
     @IBOutlet weak var myPagerView: FSPagerView! {
         didSet {
@@ -20,71 +20,36 @@ class ViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelega
             self.myPagerView.itemSize = FSPagerViewAutomaticSize
             self.myPagerView.automaticSlidingInterval = 4.0
 //            self.myPagerView.isInfinite = true
-
         }
     }
     
     @IBOutlet weak var myPageControl: FSPageControl! {
         didSet {
-            self.myPageControl.numberOfPages = self.imageNmaes.count
+            self.myPageControl.numberOfPages = self.bannerViewModel.countBannerList
             self.myPageControl.contentHorizontalAlignment = .center
             self.myPageControl.itemSpacing = 15
 //            self.myPageControl.backgroundColor = .gray
 //            self.myPageControl.interitemSpacing = 16
-
         }
     }
     
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        print( "ViewController - viewDidLoad() called")
         self.myPagerView.dataSource = self
         self.myPagerView.delegate = self
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        print("ViewController - viewWillAppear() called")
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        print("ViewController - viewDidAppear() called")
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        print("ViewController - viewWillDisappear() called")
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        print("ViewController - viewDidDisappear() called")
-    }
-    
     func numberOfItems(in pagerView: FSPagerView) -> Int {
-        return imageNmaes.count
+        return self.bannerViewModel.countBannerList
     }
     
-    // MARK: - CollectionView
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tagViewModel.countTagList
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as?  CollectionViewCell else {
-            return UICollectionViewCell()
-        }
-        let tagInfo = tagViewModel.tagInfo(at: indexPath.item)
-        cell.update(tagInfo: tagInfo)
-        return cell
-    }
-    
-    // MARK:  - PagerView
+    // MARK: - PagerView
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
-        print( "ViewController - pagerView() called")
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
-        cell.imageView?.image = UIImage(named: self.imageNmaes[index])
-        cell.textLabel?.text = text[index]
+        cell.imageView?.image = UIImage(named: self.bannerViewModel.bannerInfo(at: index).bannerImageName)
+        cell.textLabel?.text = self.bannerViewModel.bannerInfo(at: index).bannerText
         cell.textLabel?.numberOfLines = 2
-        
         return cell
     }
 
@@ -99,4 +64,34 @@ class ViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelega
     func pagerView(_ pagerView: FSPagerView, shouldHighlightItemAt index: Int) -> Bool {
         return false
     }
+    
+    // MARK: - CollectionView
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return tagViewModel.countTagList
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as?  CollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        let tagInfo = tagViewModel.tagInfo(at: indexPath.item)
+        cell.update(tagInfo: tagInfo)
+        return cell
+    }
+    
+    // MARK: - TableView
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return searchViewModel.countSearchTextList
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath) as? TableViewCell else {
+            return UITableViewCell()
+        }
+
+        let searchInfo = searchViewModel.SearchTextInfo(at: indexPath.row)
+        cell.update(searchInfo: searchInfo)
+        return cell
+    }
 }
+
