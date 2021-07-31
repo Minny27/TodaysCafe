@@ -73,12 +73,20 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		5604FD1226A1D953004DC9AF /* Resources */ = {
+		5602E5B126B14A9500553DFE /* Images */ = {
 			isa = PBXGroup;
 			children = (
 				5604FD1426A1DA0F004DC9AF /* a.jpg */,
 				5604FD1326A1DA0F004DC9AF /* b.jpg */,
 				5604FD1526A1DA0F004DC9AF /* c.jpg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		5604FD1226A1D953004DC9AF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5602E5B126B14A9500553DFE /* Images */,
 				56734CD726A15F88006EB938 /* Assets.xcassets */,
 				56734CDC26A15F88006EB938 /* Info.plist */,
 			);
