@@ -1,16 +1,16 @@
+////
+////  TableViewCell.swift
+////  Todays_Cafe
+////
+////  Created by SeungMin on 2021/07/27.
+////
 //
-//  TableViewCell.swift
-//  Todays_Cafe
+//import UIKit
 //
-//  Created by SeungMin on 2021/07/27.
+//final class TableViewCell: UITableViewCell {
+//    @IBOutlet weak var searchLabel: UILabel!
 //
-
-import UIKit
-
-final class TableViewCell: UITableViewCell {
-    @IBOutlet weak var searchLabel: UILabel!
-    
-    func update(searchInfo: Search) {
-        searchLabel.text = searchInfo.searchText
-    }
-}
+//    func update(searchInfo: Search) {
+//        searchLabel.text = searchInfo.searchText
+//    }
+//}
