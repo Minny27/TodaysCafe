@@ -8,25 +8,25 @@
 import UIKit
 import FSPagerView
 
-class ViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
+class HomeViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     
     let bannerViewModel = BannerViewModel()
     let tagViewModel = TagViewModel()
 //    let searchViewModel = SearchViewModel()
 
-    @IBOutlet weak var searchBtn: UIButton! {
+    @IBOutlet weak var tagSearchBtn: UIButton! {
         didSet {
-            self.searchBtn.setTitle("원하는 테마를 검색해보세요!", for: .normal)
-            self.searchBtn.setTitleColor(.gray, for: .normal)
-            self.searchBtn.titleLabel?.font = .boldSystemFont(ofSize: 17)
-            self.searchBtn.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
-            self.searchBtn.contentHorizontalAlignment = .left
-            self.searchBtn.titleEdgeInsets.left = 30
-            self.searchBtn.imageEdgeInsets.left = 20
-            self.searchBtn.tintColor = .gray
-            self.searchBtn.layer.cornerRadius = 10
-            self.searchBtn.layer.borderWidth = 1
-            self.searchBtn.layer.borderColor = UIColor.darkGray.cgColor
+            self.tagSearchBtn.setTitle("원하는 테마를 검색해보세요!", for: .normal)
+            self.tagSearchBtn.setTitleColor(.gray, for: .normal)
+            self.tagSearchBtn.titleLabel?.font = .boldSystemFont(ofSize: 17)
+            self.tagSearchBtn.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+            self.tagSearchBtn.contentHorizontalAlignment = .left
+            self.tagSearchBtn.titleEdgeInsets.left = 30
+            self.tagSearchBtn.imageEdgeInsets.left = 20
+            self.tagSearchBtn.tintColor = .gray
+            self.tagSearchBtn.layer.cornerRadius = 10
+            self.tagSearchBtn.layer.borderWidth = 1
+            self.tagSearchBtn.layer.borderColor = UIColor.darkGray.cgColor
         }
     }
     
@@ -47,6 +47,14 @@ class ViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelega
 //            self.myPageControl.backgroundColor = .gray
 //            self.myPageControl.interitemSpacing = 16
         }
+    }
+    
+    @IBAction func omClickTagBtn(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "HomeToAreaSearchVC", sender: nil)
+    }
+
+    @IBAction func onClickTagSearchBtn(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "HomeToTagSearchVC", sender: nil)
     }
     
     // MARK: - ViewDidLoad
