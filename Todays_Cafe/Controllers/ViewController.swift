@@ -8,11 +8,27 @@
 import UIKit
 import FSPagerView
 
-class ViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     
     let bannerViewModel = BannerViewModel()
     let tagViewModel = TagViewModel()
-    let searchViewModel = SearchViewModel()
+//    let searchViewModel = SearchViewModel()
+
+    @IBOutlet weak var searchBtn: UIButton! {
+        didSet {
+            self.searchBtn.setTitle("원하는 테마를 검색해보세요!", for: .normal)
+            self.searchBtn.setTitleColor(.gray, for: .normal)
+            self.searchBtn.titleLabel?.font = .boldSystemFont(ofSize: 17)
+            self.searchBtn.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+            self.searchBtn.contentHorizontalAlignment = .left
+            self.searchBtn.titleEdgeInsets.left = 30
+            self.searchBtn.imageEdgeInsets.left = 20
+            self.searchBtn.tintColor = .gray
+            self.searchBtn.layer.cornerRadius = 10
+            self.searchBtn.layer.borderWidth = 1
+            self.searchBtn.layer.borderColor = UIColor.darkGray.cgColor
+        }
+    }
     
     @IBOutlet weak var myPagerView: FSPagerView! {
         didSet {
@@ -80,18 +96,18 @@ class ViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelega
     }
     
     // MARK: - TableView
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchViewModel.countSearchTextList
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath) as? TableViewCell else {
-            return UITableViewCell()
-        }
-
-        let searchInfo = searchViewModel.SearchTextInfo(at: indexPath.row)
-        cell.update(searchInfo: searchInfo)
-        return cell
-    }
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return searchViewModel.countSearchTextList
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath) as? TableViewCell else {
+//            return UITableViewCell()
+//        }
+//
+//        let searchInfo = searchViewModel.SearchTextInfo(at: indexPath.row)
+//        cell.update(searchInfo: searchInfo)
+//        return cell
+//    }
 }
 
