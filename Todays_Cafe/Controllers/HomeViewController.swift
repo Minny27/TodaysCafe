@@ -12,7 +12,6 @@ class HomeViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDe
     
     let bannerViewModel = BannerViewModel()
     let tagViewModel = TagViewModel()
-//    let searchViewModel = SearchViewModel()
 
     @IBOutlet weak var tagSearchBtn: UIButton! {
         didSet {
@@ -49,15 +48,7 @@ class HomeViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDe
         }
     }
     
-    @IBAction func omClickTagBtn(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "HomeToAreaSearchVC", sender: nil)
-    }
-
-    @IBAction func onClickTagSearchBtn(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "HomeToTagSearchVC", sender: nil)
-    }
-    
-    // MARK: - ViewDidLoad
+    // MARK: - ViewDidLoad 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.myPagerView.dataSource = self
@@ -95,27 +86,12 @@ class HomeViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as?  CollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tagCollectionViewCell", for: indexPath) as? TagCollectionViewCell else {
             return UICollectionViewCell()
         }
         let tagInfo = tagViewModel.tagInfo(at: indexPath.item)
         cell.update(tagInfo: tagInfo)
         return cell
     }
-    
-    // MARK: - TableView
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return searchViewModel.countSearchTextList
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath) as? TableViewCell else {
-//            return UITableViewCell()
-//        }
-//
-//        let searchInfo = searchViewModel.SearchTextInfo(at: indexPath.row)
-//        cell.update(searchInfo: searchInfo)
-//        return cell
-//    }
 }
 
