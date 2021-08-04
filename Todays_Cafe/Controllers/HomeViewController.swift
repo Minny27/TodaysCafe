@@ -12,6 +12,9 @@ class HomeViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDe
     
     let bannerViewModel = BannerViewModel()
     let tagViewModel = TagViewModel()
+    
+    @IBOutlet weak var tagCollectionVIew: UICollectionView!
+    
 
     @IBOutlet weak var tagSearchBtn: UIButton! {
         didSet {
@@ -53,6 +56,8 @@ class HomeViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDe
         super.viewDidLoad()
         self.myPagerView.dataSource = self
         self.myPagerView.delegate = self
+//        self.tagCollectionVIew.dataSource = self
+//        self.tagCollectionVIew.delegate = self
     }
     
     func numberOfItems(in pagerView: FSPagerView) -> Int {
