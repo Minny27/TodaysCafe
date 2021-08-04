@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CollectionViewCell: UICollectionViewCell {
+final class TagCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var tagBtn: UIButton! {
         didSet {
