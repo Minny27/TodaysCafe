@@ -13,19 +13,19 @@
 		5604FD1826A1DA0F004DC9AF /* c.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5604FD1526A1DA0F004DC9AF /* c.jpg */; };
 		5615B3AF26A91A58005BCE25 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5615B3AE26A91A58005BCE25 /* Tag.swift */; };
 		5615B3B226A91C39005BCE25 /* TagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5615B3B126A91C39005BCE25 /* TagViewModel.swift */; };
-		5615B3BB26A94454005BCE25 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5615B3BA26A94454005BCE25 /* CollectionViewCell.swift */; };
+		5615B3BB26A94454005BCE25 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5615B3BA26A94454005BCE25 /* TagCollectionViewCell.swift */; };
 		56734CCF26A15F87006EB938 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56734CCE26A15F87006EB938 /* AppDelegate.swift */; };
 		56734CD126A15F87006EB938 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56734CD026A15F87006EB938 /* SceneDelegate.swift */; };
-		56734CD326A15F87006EB938 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56734CD226A15F87006EB938 /* HomeController.swift */; };
+		56734CD326A15F87006EB938 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56734CD226A15F87006EB938 /* HomeViewController.swift */; };
 		56734CD626A15F87006EB938 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56734CD426A15F87006EB938 /* Main.storyboard */; };
 		56734CD826A15F88006EB938 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56734CD726A15F88006EB938 /* Assets.xcassets */; };
 		56734CDB26A15F88006EB938 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56734CD926A15F88006EB938 /* LaunchScreen.storyboard */; };
 		567DE50026AFAAC800BA8594 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567DE4FF26AFAAC800BA8594 /* Banner.swift */; };
 		567DE50326AFAF2B00BA8594 /* BannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567DE50226AFAF2B00BA8594 /* BannerViewModel.swift */; };
-		567DE50B26B03E3100BA8594 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567DE50A26B03E3100BA8594 /* TableViewCell.swift */; };
-		567DE53026B0579C00BA8594 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567DE52F26B0579C00BA8594 /* SearchViewModel.swift */; };
-		56C8FC1626B4F7FC00CC700A /* TagSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C8FC1526B4F7FC00CC700A /* TagSearchController.swift */; };
-		56C8FC1C26B5205D00CC700A /* AreaSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C8FC1B26B5205D00CC700A /* AreaSearchController.swift */; };
+		56C8FC1626B4F7FC00CC700A /* TagSearchVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C8FC1526B4F7FC00CC700A /* TagSearchVIewController.swift */; };
+		56C8FC1C26B5205D00CC700A /* AreaSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C8FC1B26B5205D00CC700A /* AreaSearchViewController.swift */; };
+		56D2AC5126BA9E2200BC6F0D /* TagCollectionViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D2AC5026BA9E2200BC6F0D /* TagCollectionViewCell2.swift */; };
+		56D2AC5426BA9E3700BC6F0D /* TagViewModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D2AC5326BA9E3700BC6F0D /* TagViewModel2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,21 +35,21 @@
 		5604FD1526A1DA0F004DC9AF /* c.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = c.jpg; sourceTree = "<group>"; };
 		5615B3AE26A91A58005BCE25 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		5615B3B126A91C39005BCE25 /* TagViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewModel.swift; sourceTree = "<group>"; };
-		5615B3BA26A94454005BCE25 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		5615B3BA26A94454005BCE25 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		56734CCB26A15F87006EB938 /* Todays_Cafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todays_Cafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56734CCE26A15F87006EB938 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56734CD026A15F87006EB938 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		56734CD226A15F87006EB938 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		56734CD226A15F87006EB938 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		56734CD526A15F87006EB938 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		56734CD726A15F88006EB938 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56734CDA26A15F88006EB938 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56734CDC26A15F88006EB938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		567DE4FF26AFAAC800BA8594 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 		567DE50226AFAF2B00BA8594 /* BannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewModel.swift; sourceTree = "<group>"; };
-		567DE50A26B03E3100BA8594 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		567DE52F26B0579C00BA8594 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
-		56C8FC1526B4F7FC00CC700A /* TagSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSearchController.swift; sourceTree = "<group>"; };
-		56C8FC1B26B5205D00CC700A /* AreaSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaSearchController.swift; sourceTree = "<group>"; };
+		56C8FC1526B4F7FC00CC700A /* TagSearchVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSearchVIewController.swift; sourceTree = "<group>"; };
+		56C8FC1B26B5205D00CC700A /* AreaSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaSearchViewController.swift; sourceTree = "<group>"; };
+		56D2AC5026BA9E2200BC6F0D /* TagCollectionViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell2.swift; sourceTree = "<group>"; };
+		56D2AC5326BA9E3700BC6F0D /* TagViewModel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewModel2.swift; sourceTree = "<group>"; };
 		5ABE1146437B20F335C6115E /* Pods-Todays_Cafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todays_Cafe.debug.xcconfig"; path = "Target Support Files/Pods-Todays_Cafe/Pods-Todays_Cafe.debug.xcconfig"; sourceTree = "<group>"; };
 		B4BB02AA72C42A975256BE27 /* Pods-Todays_Cafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todays_Cafe.release.xcconfig"; path = "Target Support Files/Pods-Todays_Cafe/Pods-Todays_Cafe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,8 +131,8 @@
 			children = (
 				56734CD926A15F88006EB938 /* LaunchScreen.storyboard */,
 				56734CD426A15F87006EB938 /* Main.storyboard */,
-				5615B3BA26A94454005BCE25 /* CollectionViewCell.swift */,
-				567DE50A26B03E3100BA8594 /* TableViewCell.swift */,
+				5615B3BA26A94454005BCE25 /* TagCollectionViewCell.swift */,
+				56D2AC5026BA9E2200BC6F0D /* TagCollectionViewCell2.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -140,9 +140,9 @@
 		569FB48026A7E65B00A93B08 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				56734CD226A15F87006EB938 /* HomeController.swift */,
-				56C8FC1B26B5205D00CC700A /* AreaSearchController.swift */,
-				56C8FC1526B4F7FC00CC700A /* TagSearchController.swift */,
+				56734CD226A15F87006EB938 /* HomeViewController.swift */,
+				56C8FC1B26B5205D00CC700A /* AreaSearchViewController.swift */,
+				56C8FC1526B4F7FC00CC700A /* TagSearchVIewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -161,7 +161,7 @@
 			children = (
 				567DE50226AFAF2B00BA8594 /* BannerViewModel.swift */,
 				5615B3B126A91C39005BCE25 /* TagViewModel.swift */,
-				567DE52F26B0579C00BA8594 /* SearchViewModel.swift */,
+				56D2AC5326BA9E3700BC6F0D /* TagViewModel2.swift */,
 			);
 			path = VIewModels;
 			sourceTree = "<group>";
@@ -300,16 +300,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56C8FC1C26B5205D00CC700A /* AreaSearchController.swift in Sources */,
-				567DE53026B0579C00BA8594 /* SearchViewModel.swift in Sources */,
+				56C8FC1C26B5205D00CC700A /* AreaSearchViewController.swift in Sources */,
 				5615B3B226A91C39005BCE25 /* TagViewModel.swift in Sources */,
 				5615B3AF26A91A58005BCE25 /* Tag.swift in Sources */,
 				567DE50326AFAF2B00BA8594 /* BannerViewModel.swift in Sources */,
-				5615B3BB26A94454005BCE25 /* CollectionViewCell.swift in Sources */,
-				56734CD326A15F87006EB938 /* HomeController.swift in Sources */,
-				567DE50B26B03E3100BA8594 /* TableViewCell.swift in Sources */,
+				5615B3BB26A94454005BCE25 /* TagCollectionViewCell.swift in Sources */,
+				56D2AC5126BA9E2200BC6F0D /* TagCollectionViewCell2.swift in Sources */,
+				56734CD326A15F87006EB938 /* HomeViewController.swift in Sources */,
 				567DE50026AFAAC800BA8594 /* Banner.swift in Sources */,
-				56C8FC1626B4F7FC00CC700A /* TagSearchController.swift in Sources */,
+				56D2AC5426BA9E3700BC6F0D /* TagViewModel2.swift in Sources */,
+				56C8FC1626B4F7FC00CC700A /* TagSearchVIewController.swift in Sources */,
 				56734CCF26A15F87006EB938 /* AppDelegate.swift in Sources */,
 				56734CD126A15F87006EB938 /* SceneDelegate.swift in Sources */,
 			);
