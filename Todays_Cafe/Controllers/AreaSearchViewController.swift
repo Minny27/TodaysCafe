@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AreaSearchController: UIViewController {
+class AreaSearchViewController: UIViewController {
     @IBOutlet weak var backBtn: UIButton! {
         didSet {
             self.backBtn.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
