@@ -1,11 +1,11 @@
 //
-//  TagSearchViewModel.swift
+//  TagViewModel2.swift
 //  Todays_Cafe
 //
-//  Created by SeungMin on 2021/08/02.
+//  Created by SeungMin on 2021/08/04.
 //
 
-import UIKit
+import Foundation
 
 final class TagViewModel2 {
     let tagList: [Tag?] = [
@@ -15,8 +15,8 @@ final class TagViewModel2 {
         Tag("#커피가 맛있는"),
         Tag("#작업하기 좋은"),
         Tag("#저렴한"),
-        Tag("#핸드드립"),
         Tag("#크로플이 맛있는"),
+        Tag("#루프탑"),
         Tag("#리필가능")
     ]
     
