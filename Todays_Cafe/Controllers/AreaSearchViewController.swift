@@ -9,6 +9,7 @@ import UIKit
 
 class AreaSearchViewController: UIViewController {
     let areaViewModel = AreaViewModel()
+    
     @IBOutlet weak var areaCollectionView: UICollectionView! {
         didSet {
             self.areaCollectionView.layer.borderWidth = 1.5
