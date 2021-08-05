@@ -12,12 +12,12 @@ final class AreaViewModel {
         Tag("강남"),
         Tag("홍대"),
         Tag("신촌"),
-        Tag("이태원"),
         Tag("건대"),
-        Tag("신사"),
-        Tag("이수"),
         Tag("가로수길"),
+        Tag("신사"),
+        Tag("압구정"),
         Tag("혜화"),
+        Tag("이태원")
     ]
     
     var countAreaList: Int {
