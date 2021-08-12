@@ -9,6 +9,8 @@ import UIKit
 
 class AreaSearchViewController: UIViewController {
     let areaViewModel = AreaViewModel()
+    let areaCollectionViewCell = AreaCollectionViewCell()
+    var tagName: String?
     
     @IBOutlet weak var areaCollectionView: UICollectionView! {
         didSet {
@@ -26,6 +28,7 @@ class AreaSearchViewController: UIViewController {
             self.seoulBtn.contentHorizontalAlignment = .center
         }
     }
+    
     @IBOutlet weak var gyeonggiBtn: UIButton! {
         didSet {
             self.gyeonggiBtn.setTitle("경기", for: .normal)
@@ -34,6 +37,7 @@ class AreaSearchViewController: UIViewController {
             self.gyeonggiBtn.contentHorizontalAlignment = .center
         }
     }
+    
     @IBOutlet weak var inchonBtn: UIButton! {
         didSet {
             self.inchonBtn.setTitle("인천", for: .normal)
@@ -55,6 +59,17 @@ class AreaSearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.areaCollectionView.dataSource = self
+        self.areaCollectionView.delegate = self
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let cafeBlogTableViewController = segue.destination as? CafeBlogTableViewController else { return }
+        if let areaInfo = sender as? Tag {
+            cafeBlogTableViewController.areaName = areaInfo.tagName
+        }
+        if let tagName = self.tagName {
+            cafeBlogTableViewController.tagName = tagName
+        }
     }
     
     @IBAction func onClickBackBtn(_ sender: UIButton) {
@@ -62,6 +77,7 @@ class AreaSearchViewController: UIViewController {
     }
 }
 
+// MARK: - UICollectionViewDataSource
 extension AreaSearchViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return areaViewModel.countAreaList
@@ -75,6 +91,12 @@ extension AreaSearchViewController: UICollectionViewDataSource {
         cell.update(areaInfo: areaInfo)
         return cell
     }
-    
-    
+}
+
+// MARK: - UICollectionViewDelegate
+extension AreaSearchViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let areaInfo = areaViewModel.areaInfo(at: indexPath.item)
+        performSegue(withIdentifier: "areaSearchVCToCafeBlogTableVC", sender: areaInfo)
+    }
 }
