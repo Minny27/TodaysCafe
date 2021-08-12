@@ -9,12 +9,12 @@ import Foundation
 
 final class TagViewModel {
     let tagList: [Tag?] = [
-        Tag("#야외석 있는"),
-        Tag("#분위기 좋은"),
-        Tag("#디저트가 맛있는"),
-        Tag("#커피가 맛있는"),
-        Tag("#작업하기 좋은"),
-        Tag("#저렴한")
+        Tag("outdoorSeat", "#야외석 있는"),
+        Tag("mood", "#분위기 좋은"),
+        Tag("desert", "#디저트가 맛있는"),
+        Tag("sweet", "#커피가 맛있는"),
+        Tag("quiet", "#작업하기 좋은"),
+        Tag("cheap", "#저렴한")
     ]
     
     var countTagList: Int {

@@ -9,15 +9,15 @@ import Foundation
 
 final class AreaViewModel {
     let areaList: [Tag?] = [
-        Tag("강남"),
-        Tag("홍대"),
-        Tag("신촌"),
-        Tag("건대"),
-        Tag("가로수길"),
-        Tag("신사"),
-        Tag("압구정"),
-        Tag("혜화"),
-        Tag("이태원")
+        Tag("gangnam", "강남"),
+        Tag("hongUni", "홍대"),
+        Tag("hongUni", "신촌"),
+        Tag("konUni", "건대"),
+        Tag("garosugil", "가로수길"),
+        Tag("sinsa", "신사"),
+        Tag("apgujeong", "압구정"),
+        Tag("hyehwa", "혜화"),
+        Tag("itaewon", "이태원")
     ]
     
     var countAreaList: Int {
