@@ -8,14 +8,12 @@
 import UIKit
 import FSPagerView
 
-class HomeViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
-    
+class HomeViewController: UIViewController {
     let bannerViewModel = BannerViewModel()
     let tagViewModel = TagViewModel()
     
-    @IBOutlet weak var tagCollectionVIew: UICollectionView!
+    @IBOutlet weak var tagCollectionView: UICollectionView!
     
-
     @IBOutlet weak var tagSearchBtn: UIButton! {
         didSet {
             self.tagSearchBtn.setTitle("원하는 테마를 검색해보세요!", for: .normal)
@@ -27,8 +25,8 @@ class HomeViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDe
             self.tagSearchBtn.imageEdgeInsets.left = 20
             self.tagSearchBtn.tintColor = .gray
             self.tagSearchBtn.layer.cornerRadius = 10
-            self.tagSearchBtn.layer.borderWidth = 1
-            self.tagSearchBtn.layer.borderColor = UIColor.darkGray.cgColor
+            self.tagSearchBtn.layer.borderWidth = 1.5
+            self.tagSearchBtn.layer.borderColor = UIColor.lightGray.cgColor
         }
     }
     
@@ -37,7 +35,6 @@ class HomeViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDe
             self.myPagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
             self.myPagerView.itemSize = FSPagerViewAutomaticSize
             self.myPagerView.automaticSlidingInterval = 4.0
-//            self.myPagerView.isInfinite = true
         }
     }
     
@@ -46,8 +43,6 @@ class HomeViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDe
             self.myPageControl.numberOfPages = self.bannerViewModel.countBannerList
             self.myPageControl.contentHorizontalAlignment = .center
             self.myPageControl.itemSpacing = 15
-//            self.myPageControl.backgroundColor = .gray
-//            self.myPageControl.interitemSpacing = 16
         }
     }
     
@@ -56,15 +51,23 @@ class HomeViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDe
         super.viewDidLoad()
         self.myPagerView.dataSource = self
         self.myPagerView.delegate = self
-//        self.tagCollectionVIew.dataSource = self
-//        self.tagCollectionVIew.delegate = self
+        self.tagCollectionView.dataSource = self
+        self.tagCollectionView.delegate = self
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let areaSearchViewController = segue.destination as? AreaSearchViewController else { return }
+        if let tagInfo = sender as? Tag {
+            areaSearchViewController.tagName = tagInfo.tagName
+        }
+    }
+}
+
+// MARK: - FSPagerViewDataSource
+extension HomeViewController: FSPagerViewDataSource {
     func numberOfItems(in pagerView: FSPagerView) -> Int {
         return self.bannerViewModel.countBannerList
     }
-    
-    // MARK: - PagerView
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
         cell.imageView?.image = UIImage(named: self.bannerViewModel.bannerInfo(at: index).bannerImageName)
@@ -72,7 +75,10 @@ class HomeViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDe
         cell.textLabel?.numberOfLines = 2
         return cell
     }
+}
 
+// MARK: - FSPagerViewDelegate
+extension HomeViewController: FSPagerViewDelegate {
     func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
         self.myPageControl.currentPage = targetIndex
     }
@@ -84,8 +90,10 @@ class HomeViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDe
     func pagerView(_ pagerView: FSPagerView, shouldHighlightItemAt index: Int) -> Bool {
         return false
     }
-    
-    // MARK: - CollectionView
+}
+
+// MARK: - UICollectionViewDataSource
+extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return tagViewModel.countTagList
     }
@@ -100,3 +108,10 @@ class HomeViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDe
     }
 }
 
+// MARK: - UICollectionViewDelegate
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let tagInfo = tagViewModel.tagInfo(at: indexPath.item)
+        performSegue(withIdentifier: "homeVCToAreaSearchVC", sender: tagInfo)
+    }
+}
