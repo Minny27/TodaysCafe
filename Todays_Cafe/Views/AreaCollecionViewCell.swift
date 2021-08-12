@@ -8,15 +8,15 @@
 import UIKit
 
 final class AreaCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var areaBtn: UIButton! {
+    @IBOutlet weak var areaLabel: UILabel! {
         didSet {
-            self.areaBtn.setTitleColor(.systemTeal, for: .normal)
-            self.areaBtn.titleLabel?.font = .boldSystemFont(ofSize: 22)
-            self.areaBtn.contentHorizontalAlignment = .center
+            areaLabel.textColor = .systemTeal
+            areaLabel.font = .boldSystemFont(ofSize: 22)
+            areaLabel.textAlignment = .center
         }
     }
     
     func update(areaInfo: Tag) {
-        self.areaBtn.setTitle(areaInfo.tagName, for: .normal)
+        areaLabel.text = areaInfo.tagName
     }
 }
