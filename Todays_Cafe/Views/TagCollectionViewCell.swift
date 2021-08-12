@@ -8,16 +8,15 @@
 import UIKit
 
 final class TagCollectionViewCell: UICollectionViewCell {
-    
-    @IBOutlet weak var tagBtn: UIButton! {
+    @IBOutlet weak var tagLabel: UILabel! {
         didSet {
-            self.tagBtn.setTitleColor(.systemTeal, for: .normal)
-            self.tagBtn.titleLabel?.font = .boldSystemFont(ofSize: 20)
-            self.tagBtn.contentHorizontalAlignment = .left
+            tagLabel.textColor = .systemTeal
+            tagLabel.font = .boldSystemFont(ofSize: 20)
+            tagLabel.textAlignment = .left
         }
     }
     
     func update(tagInfo: Tag) {
-        self.tagBtn.setTitle(tagInfo.tagName, for: .normal)
+        tagLabel.text = tagInfo.tagName
     }
 }
