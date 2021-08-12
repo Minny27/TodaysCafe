@@ -28,6 +28,7 @@
 		56C8FC1C26B5205D00CC700A /* AreaSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C8FC1B26B5205D00CC700A /* AreaSearchViewController.swift */; };
 		56D2AC5126BA9E2200BC6F0D /* TagCollectionViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D2AC5026BA9E2200BC6F0D /* TagCollectionViewCell2.swift */; };
 		56D2AC5426BA9E3700BC6F0D /* TagViewModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D2AC5326BA9E3700BC6F0D /* TagViewModel2.swift */; };
+		56E3424F26C1301200902F3D /* CafeBlogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E3424E26C1301200902F3D /* CafeBlogTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		56C8FC1B26B5205D00CC700A /* AreaSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaSearchViewController.swift; sourceTree = "<group>"; };
 		56D2AC5026BA9E2200BC6F0D /* TagCollectionViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell2.swift; sourceTree = "<group>"; };
 		56D2AC5326BA9E3700BC6F0D /* TagViewModel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewModel2.swift; sourceTree = "<group>"; };
+		56E3424E26C1301200902F3D /* CafeBlogTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeBlogTableViewController.swift; sourceTree = "<group>"; };
 		5ABE1146437B20F335C6115E /* Pods-Todays_Cafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todays_Cafe.debug.xcconfig"; path = "Target Support Files/Pods-Todays_Cafe/Pods-Todays_Cafe.debug.xcconfig"; sourceTree = "<group>"; };
 		B4BB02AA72C42A975256BE27 /* Pods-Todays_Cafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todays_Cafe.release.xcconfig"; path = "Target Support Files/Pods-Todays_Cafe/Pods-Todays_Cafe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +150,7 @@
 				56734CD226A15F87006EB938 /* HomeViewController.swift */,
 				56C8FC1B26B5205D00CC700A /* AreaSearchViewController.swift */,
 				562CDCBE26BC4DDC00C2906D /* TagSearchViewController.swift */,
+				56E3424E26C1301200902F3D /* CafeBlogTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				56D2AC5126BA9E2200BC6F0D /* TagCollectionViewCell2.swift in Sources */,
 				562CDCBF26BC4DDC00C2906D /* TagSearchViewController.swift in Sources */,
 				56734CD326A15F87006EB938 /* HomeViewController.swift in Sources */,
+				56E3424F26C1301200902F3D /* CafeBlogTableViewController.swift in Sources */,
 				562CDCB926BC468100C2906D /* AreaCollecionViewCell.swift in Sources */,
 				567DE50026AFAAC800BA8594 /* Banner.swift in Sources */,
 				56D2AC5426BA9E3700BC6F0D /* TagViewModel2.swift in Sources */,
