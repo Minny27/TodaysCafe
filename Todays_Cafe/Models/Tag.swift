@@ -11,7 +11,6 @@ struct Tag {
     let tagId: String
     let tagName: String
     
-    
     init(_ tagId: String, _ tagName: String) {
         self.tagId = tagId
         self.tagName = tagName
