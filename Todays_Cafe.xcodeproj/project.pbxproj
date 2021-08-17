@@ -17,6 +17,9 @@
 		562CDCB626BC45A800C2906D /* AreaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562CDCB526BC45A800C2906D /* AreaViewModel.swift */; };
 		562CDCB926BC468100C2906D /* AreaCollecionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562CDCB826BC468100C2906D /* AreaCollecionViewCell.swift */; };
 		562CDCBF26BC4DDC00C2906D /* TagSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562CDCBE26BC4DDC00C2906D /* TagSearchViewController.swift */; };
+		5636EFB626C53FC400C61303 /* CafeBlogCellInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5636EFB526C53FC400C61303 /* CafeBlogCellInfo.swift */; };
+		5636EFB926C5774400C61303 /* CafeBlogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5636EFB826C5774400C61303 /* CafeBlogViewModel.swift */; };
+		5636EFBD26C5808F00C61303 /* CafeBlogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5636EFBC26C5808F00C61303 /* CafeBlogTableViewCell.swift */; };
 		56734CCF26A15F87006EB938 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56734CCE26A15F87006EB938 /* AppDelegate.swift */; };
 		56734CD126A15F87006EB938 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56734CD026A15F87006EB938 /* SceneDelegate.swift */; };
 		56734CD326A15F87006EB938 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56734CD226A15F87006EB938 /* HomeViewController.swift */; };
@@ -42,6 +45,9 @@
 		562CDCB526BC45A800C2906D /* AreaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaViewModel.swift; sourceTree = "<group>"; };
 		562CDCB826BC468100C2906D /* AreaCollecionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaCollecionViewCell.swift; sourceTree = "<group>"; };
 		562CDCBE26BC4DDC00C2906D /* TagSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSearchViewController.swift; sourceTree = "<group>"; };
+		5636EFB526C53FC400C61303 /* CafeBlogCellInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeBlogCellInfo.swift; sourceTree = "<group>"; };
+		5636EFB826C5774400C61303 /* CafeBlogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeBlogViewModel.swift; sourceTree = "<group>"; };
+		5636EFBC26C5808F00C61303 /* CafeBlogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeBlogTableViewCell.swift; sourceTree = "<group>"; };
 		56734CCB26A15F87006EB938 /* Todays_Cafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todays_Cafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56734CCE26A15F87006EB938 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56734CD026A15F87006EB938 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +146,7 @@
 				5615B3BA26A94454005BCE25 /* TagCollectionViewCell.swift */,
 				56D2AC5026BA9E2200BC6F0D /* TagCollectionViewCell2.swift */,
 				562CDCB826BC468100C2906D /* AreaCollecionViewCell.swift */,
+				5636EFBC26C5808F00C61303 /* CafeBlogTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -160,6 +167,7 @@
 			children = (
 				567DE4FF26AFAAC800BA8594 /* Banner.swift */,
 				5615B3AE26A91A58005BCE25 /* Tag.swift */,
+				5636EFB526C53FC400C61303 /* CafeBlogCellInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -171,6 +179,7 @@
 				5615B3B126A91C39005BCE25 /* TagViewModel.swift */,
 				56D2AC5326BA9E3700BC6F0D /* TagViewModel2.swift */,
 				562CDCB526BC45A800C2906D /* AreaViewModel.swift */,
+				5636EFB826C5774400C61303 /* CafeBlogViewModel.swift */,
 			);
 			path = VIewModels;
 			sourceTree = "<group>";
@@ -309,6 +318,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5636EFBD26C5808F00C61303 /* CafeBlogTableViewCell.swift in Sources */,
+				5636EFB926C5774400C61303 /* CafeBlogViewModel.swift in Sources */,
+				5636EFB626C53FC400C61303 /* CafeBlogCellInfo.swift in Sources */,
 				56C8FC1C26B5205D00CC700A /* AreaSearchViewController.swift in Sources */,
 				5615B3B226A91C39005BCE25 /* TagViewModel.swift in Sources */,
 				5615B3AF26A91A58005BCE25 /* Tag.swift in Sources */,

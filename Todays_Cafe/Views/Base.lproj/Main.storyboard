@@ -405,21 +405,118 @@
                                     <action selector="onBackBtnClicked" destination="lRD-st-pJl" eventType="touchUpInside" id="3QI-Wt-PLO"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SkK-2F-PgZ" userLabel="CafeBlogTableView">
+                                <rect key="frame" x="20" y="124" width="374" height="738"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cafeBlogTableViewCell" id="NzB-wf-uoq" userLabel="CafeBlogTableViewCell" customClass="CafeBlogTableViewCell" customModule="Todays_Cafe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NzB-wf-uoq" id="958-0B-3hT">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYp-lc-aRH" userLabel="BlogTilte">
+                                                    <rect key="frame" x="10" y="45" width="194" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="evH-gc-hXD"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rj2-Bp-cMC" userLabel="BlogThumbnail">
+                                                    <rect key="frame" x="214" y="10" width="150" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="nzn-hB-7li"/>
+                                                        <constraint firstAttribute="height" constant="100" id="vAr-To-krk"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4h-A2-V1E" userLabel="BlogerName">
+                                                    <rect key="frame" x="42" y="16" width="80" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="Xfp-CH-1j3"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="khk-ua-mlU"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Nr-7P-aRb" userLabel="BlogerImage">
+                                                    <rect key="frame" x="10" y="10" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="KRT-qr-btV"/>
+                                                        <constraint firstAttribute="width" constant="30" id="bUk-xC-e8R"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOY-r1-czk" userLabel="BlogContent">
+                                                    <rect key="frame" x="10" y="65" width="194" height="45"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGu-IT-JFI" userLabel="BlogerUploadDate">
+                                                    <rect key="frame" x="124" y="16" width="60" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="89Z-08-X9f"/>
+                                                        <constraint firstAttribute="height" constant="20" id="k3Z-YN-rgW"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="AOY-r1-czk" firstAttribute="leading" secondItem="958-0B-3hT" secondAttribute="leading" constant="10" id="9XA-T6-jGf"/>
+                                                <constraint firstAttribute="bottom" secondItem="AOY-r1-czk" secondAttribute="bottom" constant="10" id="CCv-O7-F2j"/>
+                                                <constraint firstItem="3Nr-7P-aRb" firstAttribute="leading" secondItem="958-0B-3hT" secondAttribute="leading" constant="10" id="ELP-lj-T3L"/>
+                                                <constraint firstItem="rj2-Bp-cMC" firstAttribute="leading" secondItem="OYp-lc-aRH" secondAttribute="trailing" constant="10" id="LHS-Fi-f7p"/>
+                                                <constraint firstItem="OYp-lc-aRH" firstAttribute="leading" secondItem="958-0B-3hT" secondAttribute="leading" constant="10" id="N5v-Rm-XHR"/>
+                                                <constraint firstAttribute="bottom" secondItem="rj2-Bp-cMC" secondAttribute="bottom" constant="10" id="OKA-EF-qTJ"/>
+                                                <constraint firstItem="3Nr-7P-aRb" firstAttribute="top" secondItem="958-0B-3hT" secondAttribute="top" constant="10" id="TDE-SI-6Wp"/>
+                                                <constraint firstItem="AOY-r1-czk" firstAttribute="top" secondItem="OYp-lc-aRH" secondAttribute="bottom" id="UF1-0w-dkE"/>
+                                                <constraint firstItem="rj2-Bp-cMC" firstAttribute="leading" secondItem="dGu-IT-JFI" secondAttribute="trailing" constant="30" id="VO3-IF-VwJ"/>
+                                                <constraint firstItem="S4h-A2-V1E" firstAttribute="top" secondItem="958-0B-3hT" secondAttribute="topMargin" constant="5" id="Xvq-JK-VKd"/>
+                                                <constraint firstItem="dGu-IT-JFI" firstAttribute="top" secondItem="958-0B-3hT" secondAttribute="topMargin" constant="5" id="ZaC-Jh-CFB"/>
+                                                <constraint firstItem="S4h-A2-V1E" firstAttribute="leading" secondItem="3Nr-7P-aRb" secondAttribute="trailing" constant="2" id="eNm-kd-iMw"/>
+                                                <constraint firstItem="OYp-lc-aRH" firstAttribute="top" secondItem="3Nr-7P-aRb" secondAttribute="bottom" constant="5" id="gth-Xv-3Fu"/>
+                                                <constraint firstAttribute="trailing" secondItem="rj2-Bp-cMC" secondAttribute="trailing" constant="10" id="jX4-Ma-DZN"/>
+                                                <constraint firstItem="dGu-IT-JFI" firstAttribute="leading" secondItem="S4h-A2-V1E" secondAttribute="trailing" constant="2" id="vH2-xA-CVV"/>
+                                                <constraint firstItem="rj2-Bp-cMC" firstAttribute="leading" secondItem="AOY-r1-czk" secondAttribute="trailing" constant="10" id="vm0-Mm-2ZH"/>
+                                                <constraint firstItem="rj2-Bp-cMC" firstAttribute="top" secondItem="958-0B-3hT" secondAttribute="top" constant="10" id="w0C-YA-X5H"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="blogContent" destination="AOY-r1-czk" id="zJM-l3-dxs"/>
+                                            <outlet property="blogThumbnail" destination="rj2-Bp-cMC" id="2zY-Ph-h7g"/>
+                                            <outlet property="blogTitle" destination="OYp-lc-aRH" id="8Ac-fz-dbJ"/>
+                                            <outlet property="blogerImage" destination="3Nr-7P-aRb" id="fzU-AH-zRz"/>
+                                            <outlet property="blogerName" destination="S4h-A2-V1E" id="Y3K-t6-jZO"/>
+                                            <outlet property="blogerUploadDate" destination="dGu-IT-JFI" id="xn4-ow-CMM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ToV-tc-iLa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="eCq-YP-efa" firstAttribute="leading" secondItem="ToV-tc-iLa" secondAttribute="leading" constant="20" id="9Fb-gj-Sq3"/>
+                            <constraint firstItem="SkK-2F-PgZ" firstAttribute="leading" secondItem="ToV-tc-iLa" secondAttribute="leading" constant="20" id="CCK-8v-c00"/>
+                            <constraint firstItem="SkK-2F-PgZ" firstAttribute="top" secondItem="eCq-YP-efa" secondAttribute="bottom" constant="40" id="Rrz-E1-9nZ"/>
                             <constraint firstItem="eCq-YP-efa" firstAttribute="top" secondItem="ToV-tc-iLa" secondAttribute="top" constant="10" id="c5S-iS-nY0"/>
+                            <constraint firstItem="ToV-tc-iLa" firstAttribute="trailing" secondItem="SkK-2F-PgZ" secondAttribute="trailing" constant="20" id="rbC-Jr-Q9O"/>
+                            <constraint firstItem="ToV-tc-iLa" firstAttribute="bottom" secondItem="SkK-2F-PgZ" secondAttribute="bottom" id="v15-30-2Kj"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backBtn" destination="eCq-YP-efa" id="7Me-ck-h3O"/>
+                        <outlet property="cafeBlogTableView" destination="SkK-2F-PgZ" id="2ob-YV-3tE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qJl-Zd-Q13" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2100" y="109"/>
+            <point key="canvasLocation" x="2100" y="108.48214285714285"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
