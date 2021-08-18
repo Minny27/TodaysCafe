@@ -7,7 +7,6 @@
 
 import UIKit
 import SwiftSoup
-import Foundation
 
 class CafeBlogTableViewController: UIViewController {
     var tagName: String?
@@ -26,10 +25,6 @@ class CafeBlogTableViewController: UIViewController {
             self.backBtn.contentVerticalAlignment = .fill
             self.backBtn.tintColor = .darkGray
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,7 +51,7 @@ class CafeBlogTableViewController: UIViewController {
             let html = try String(contentsOf: url, encoding: .utf8)
 
             let doc: Document = try SwiftSoup.parse(html)
-            for blogIndex in 1..<10 {
+            for blogIndex in 1...10 {
                 let blogIndex = String(blogIndex)
 
                 let ImageSrcData: Elements = try doc.select("div._more_contents_event_base").select("ul.lst_total").select("li#sp_blog_\(blogIndex).bx").select("img[src]")
@@ -94,14 +89,31 @@ class CafeBlogTableViewController: UIViewController {
                 
                 // 블로그 컨텐츠
                 let blogContent = try String(blogTextArray[blogTextArray.count - 1].text())
+                
+                let blogLinkSplit = try blogTextArray[blogTextArray.count - 1].absUrl("href").components(separatedBy: "?")
+                let blogUrl = blogLinkSplit[0]
+                let blogLinkLogNumSplit = blogLinkSplit[blogLinkSplit.count - 1].components(separatedBy: "=")
+                let blogLinkLogNum = blogLinkLogNumSplit[blogLinkLogNumSplit.count - 1]
+                
+                let mobileKeywordIndex = blogUrl.index(blogUrl.startIndex, offsetBy: 8)
+                
+                var blogDetailUrl = blogUrl + "/" + blogLinkLogNum
+                blogDetailUrl.insert(contentsOf: "m.", at: mobileKeywordIndex)
                                 
-                let cafeBlogTableViewCell = CafeBlogCellInfo(UIImage(data: blogThumbnail)!, UIImage(data: blogerImage)!, blogerName, blogerUploadDate, blogTitle, blogContent)
+                let cafeBlogTableViewCell = CafeBlogCellInfo(UIImage(data: blogThumbnail)!, UIImage(data: blogerImage)!, blogerName, blogerUploadDate, blogTitle, blogContent, blogDetailUrl)
                 cafeBlogViewModel.appendCafeBlog(cafeBlogTableViewCell)
             }
         } catch Exception.Error(let type, let message) {
             print(message)
         } catch {
             print("error")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let cafeBlogDetailViewController = segue.destination as? CafeBlogDetailViewController else { return }
+        if let blogInfo = sender as? CafeBlogCellInfo {
+            cafeBlogDetailViewController.cafeBlogURL = blogInfo.blogDetailUrl
         }
     }
     
@@ -126,5 +138,8 @@ extension CafeBlogTableViewController: UITableViewDataSource {
 
 // Mark: - UITableViewDelegate
 extension CafeBlogTableViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let blogInfo = cafeBlogViewModel.cafeBlogInfo(at: indexPath.item)
+        performSegue(withIdentifier: "cafeBlogTableVCToCafeBlogDetailVC", sender: blogInfo)
+    }
 }
