@@ -15,13 +15,15 @@ struct CafeBlogCellInfo {
     let blogerUploadDate: String
     let blogTitle: String
     let blogContetnt: String
+    let blogDetailUrl: String
     
-    init(_ blogThumbnail: UIImage, _ blogerImage: UIImage, _ blogerName: String, _ blogerUploadDate: String, _ blogTitle: String, _ blogContetnt: String) {
+    init(_ blogThumbnail: UIImage, _ blogerImage: UIImage, _ blogerName: String, _ blogerUploadDate: String, _ blogTitle: String, _ blogContetnt: String, _ blogDetailUrl: String) {
         self.blogThumbnail = blogThumbnail
         self.blogerImage = blogerImage
         self.blogerName = blogerName
         self.blogerUploadDate = blogerUploadDate
         self.blogTitle = blogTitle
         self.blogContetnt = blogContetnt
+        self.blogDetailUrl = blogDetailUrl
     }
 }
