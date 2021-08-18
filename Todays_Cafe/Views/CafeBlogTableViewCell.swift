@@ -13,24 +13,28 @@ final class CafeBlogTableViewCell: UITableViewCell {
 
     @IBOutlet weak var blogerImage: UIImageView! {
         didSet {
-            blogerImage.layer.cornerRadius = blogerImage.layer.frame.height / 2
+            blogerImage.layer.cornerRadius = blogerImage.frame.height / 2
         }
     }
+    
     @IBOutlet weak var blogerName: UILabel! {
         didSet {
             blogerName.font = .systemFont(ofSize: 10)
         }
     }
+    
     @IBOutlet weak var blogerUploadDate: UILabel! {
         didSet {
             blogerUploadDate.font = .systemFont(ofSize: 10)
         }
     }
+    
     @IBOutlet weak var blogTitle: UILabel! {
         didSet {
             blogTitle.font = .boldSystemFont(ofSize: 13)
         }
     }
+    
     @IBOutlet weak var blogContent: UILabel! {
         didSet {
             blogContent.font = .systemFont(ofSize: 12)
