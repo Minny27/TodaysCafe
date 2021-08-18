@@ -49,6 +49,7 @@ class TagSearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.tagCollectionView2.delegate = self
         self.tagCollectionView2.dataSource = self
     }

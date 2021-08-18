@@ -49,6 +49,7 @@ class HomeViewController: UIViewController {
     // MARK: - ViewDidLoad 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.myPagerView.dataSource = self
         self.myPagerView.delegate = self
         self.tagCollectionView.dataSource = self

@@ -58,6 +58,7 @@ class AreaSearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.areaCollectionView.dataSource = self
         self.areaCollectionView.delegate = self
     }
