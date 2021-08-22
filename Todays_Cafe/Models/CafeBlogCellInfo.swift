@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftSoup
 
 struct CafeBlogCellInfo {
     let blogThumbnail: UIImage
