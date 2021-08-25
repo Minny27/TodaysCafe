@@ -20,6 +20,7 @@
 		5636EFB626C53FC400C61303 /* CafeBlogCellInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5636EFB526C53FC400C61303 /* CafeBlogCellInfo.swift */; };
 		5636EFB926C5774400C61303 /* CafeBlogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5636EFB826C5774400C61303 /* CafeBlogViewModel.swift */; };
 		5636EFBD26C5808F00C61303 /* CafeBlogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5636EFBC26C5808F00C61303 /* CafeBlogTableViewCell.swift */; };
+		5639B85D26D3EE250080791B /* PagingTabbarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639B85C26D3EE250080791B /* PagingTabbarDelegate.swift */; };
 		56734CCF26A15F87006EB938 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56734CCE26A15F87006EB938 /* AppDelegate.swift */; };
 		56734CD126A15F87006EB938 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56734CD026A15F87006EB938 /* SceneDelegate.swift */; };
 		56734CD326A15F87006EB938 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56734CD226A15F87006EB938 /* HomeViewController.swift */; };
@@ -49,6 +50,7 @@
 		5636EFB526C53FC400C61303 /* CafeBlogCellInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeBlogCellInfo.swift; sourceTree = "<group>"; };
 		5636EFB826C5774400C61303 /* CafeBlogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeBlogViewModel.swift; sourceTree = "<group>"; };
 		5636EFBC26C5808F00C61303 /* CafeBlogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeBlogTableViewCell.swift; sourceTree = "<group>"; };
+		5639B85C26D3EE250080791B /* PagingTabbarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingTabbarDelegate.swift; sourceTree = "<group>"; };
 		56734CCB26A15F87006EB938 /* Todays_Cafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todays_Cafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56734CCE26A15F87006EB938 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56734CD026A15F87006EB938 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		5639B85526D3E8B00080791B /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				5639B85C26D3EE250080791B /* PagingTabbarDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				56C8FC1C26B5205D00CC700A /* AreaSearchViewController.swift in Sources */,
 				5615B3B226A91C39005BCE25 /* TagViewModel.swift in Sources */,
 				5615B3AF26A91A58005BCE25 /* Tag.swift in Sources */,
+				5639B85D26D3EE250080791B /* PagingTabbarDelegate.swift in Sources */,
 				567DE50326AFAF2B00BA8594 /* BannerViewModel.swift in Sources */,
 				56CFEFD626CCD98B000C65D1 /* CafeBlogDetailViewController.swift in Sources */,
 				5615B3BB26A94454005BCE25 /* TagCollectionViewCell.swift in Sources */,
@@ -501,7 +505,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = Todays_Cafe/Resources/Info.plist;
+				INFOPLIST_FILE = Todays_Cafe/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -521,7 +525,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = Todays_Cafe/Resources/Info.plist;
+				INFOPLIST_FILE = Todays_Cafe/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
