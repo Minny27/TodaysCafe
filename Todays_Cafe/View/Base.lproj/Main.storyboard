@@ -80,7 +80,7 @@
                                     <color key="titleColor" name="AccentColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="6gO-ZZ-zdZ" kind="presentation" identifier="HomeVCToTagSearchVC" modalPresentationStyle="fullScreen" id="o75-tv-Ded"/>
+                                    <segue destination="6gO-ZZ-zdZ" kind="presentation" identifier="homeVCToTagSearchVC" modalPresentationStyle="fullScreen" id="o75-tv-Ded"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HbY-ZW-wfs" userLabel="TagCollectionView">
@@ -181,35 +181,53 @@
                                     <action selector="onClickBackBtn:" destination="FYA-Jy-s9U" eventType="touchUpInside" id="6kb-OJ-28b"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BUY-gT-fO1" userLabel="SeoulBtn">
-                                <rect key="frame" x="67" y="244" width="80" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="eIE-Fd-DlY"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="fBR-lU-d9n"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqM-Jb-U31" userLabel="GyeonggiBtn">
-                                <rect key="frame" x="167" y="244" width="80" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="6Ds-rT-g6n"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="YJw-0y-SBX"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ba-PA-4w6" userLabel="InchonBtn">
-                                <rect key="frame" x="267" y="244" width="80" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="NJG-Ud-dt1"/>
-                                    <constraint firstAttribute="height" constant="20" id="g2s-2G-lzL"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Hc-dq-dEX" userLabel="AreaCollectionView">
-                                <rect key="frame" x="30" y="284" width="354" height="170"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gCS-ZP-s2c" userLabel="CityTabbarCollectionView">
+                                <rect key="frame" x="20" y="184" width="374" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="170" id="EGt-yX-unT"/>
+                                    <constraint firstAttribute="height" constant="50" id="9bZ-Mk-rYW"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="50" id="6GC-6O-Rbl">
+                                    <size key="itemSize" width="30" height="20"/>
+                                    <size key="estimatedItemSize" width="30" height="20"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="60" minY="15" maxX="60" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cityTabbarCollecionViewCell" id="gpB-16-ucD" userLabel="CityTabbarCollectionViewCell" customClass="CityTabbarCollecionViewCell" customModule="Todays_Cafe" customModuleProvider="target">
+                                        <rect key="frame" x="60" y="15" width="30" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2c5-Ne-Ek2">
+                                            <rect key="frame" x="0.0" y="0.0" width="30" height="20"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMR-vB-GVc" userLabel="CityLabel">
+                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="kMR-vB-GVc" firstAttribute="top" secondItem="2c5-Ne-Ek2" secondAttribute="top" id="Lwk-H7-eNL"/>
+                                                <constraint firstAttribute="bottom" secondItem="kMR-vB-GVc" secondAttribute="bottom" id="g3S-T6-PXZ"/>
+                                                <constraint firstItem="kMR-vB-GVc" firstAttribute="leading" secondItem="2c5-Ne-Ek2" secondAttribute="leading" id="l2K-6I-OlA"/>
+                                                <constraint firstAttribute="trailing" secondItem="kMR-vB-GVc" secondAttribute="trailing" id="xfy-X1-q9U"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="30" height="20"/>
+                                        <connections>
+                                            <outlet property="cityLabel" destination="kMR-vB-GVc" id="1NZ-48-HUO"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Hc-dq-dEX" userLabel="AreaCollectionView">
+                                <rect key="frame" x="20" y="234" width="374" height="170"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="T7g-nJ-IJ5"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="15" id="0WH-kH-hxP">
                                     <size key="itemSize" width="100" height="50"/>
@@ -218,7 +236,7 @@
                                     <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="areaCollectionViewCell" id="Zhx-S8-Eid" customClass="AreaCollectionViewCell" customModule="Todays_Cafe" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="areaCollectionViewCell" id="Zhx-S8-Eid" userLabel="AreaCollectionViewCell" customClass="AreaCollectionViewCell" customModule="Todays_Cafe" customModuleProvider="target">
                                         <rect key="frame" x="10" y="0.0" width="100" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="j3J-PG-fDW">
@@ -250,32 +268,26 @@
                         <viewLayoutGuide key="safeArea" id="z0v-8a-AYP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="3Hc-dq-dEX" firstAttribute="top" secondItem="BUY-gT-fO1" secondAttribute="bottom" constant="20" id="28p-zQ-wT1"/>
-                            <constraint firstItem="eqM-Jb-U31" firstAttribute="leading" secondItem="BUY-gT-fO1" secondAttribute="trailing" constant="20" id="50d-pd-svz"/>
-                            <constraint firstItem="2ba-PA-4w6" firstAttribute="leading" secondItem="eqM-Jb-U31" secondAttribute="trailing" constant="20" id="B1y-Q1-oSS"/>
-                            <constraint firstItem="BUY-gT-fO1" firstAttribute="leading" secondItem="z0v-8a-AYP" secondAttribute="leading" constant="67" id="Nlh-BD-aIh"/>
+                            <constraint firstItem="gCS-ZP-s2c" firstAttribute="leading" secondItem="z0v-8a-AYP" secondAttribute="leading" constant="20" id="9ul-K1-24q"/>
+                            <constraint firstItem="gCS-ZP-s2c" firstAttribute="top" secondItem="CbI-6R-Wp1" secondAttribute="bottom" constant="100" id="B0T-xm-4uc"/>
+                            <constraint firstItem="3Hc-dq-dEX" firstAttribute="leading" secondItem="z0v-8a-AYP" secondAttribute="leading" constant="20" id="Bzx-lF-BQh"/>
                             <constraint firstItem="CbI-6R-Wp1" firstAttribute="top" secondItem="z0v-8a-AYP" secondAttribute="top" constant="10" id="Nz4-vP-0w7"/>
-                            <constraint firstItem="BUY-gT-fO1" firstAttribute="top" secondItem="z0v-8a-AYP" secondAttribute="top" constant="200" id="VyD-Nk-bVp"/>
-                            <constraint firstItem="z0v-8a-AYP" firstAttribute="trailing" secondItem="3Hc-dq-dEX" secondAttribute="trailing" constant="30" id="aww-ur-VwQ"/>
-                            <constraint firstItem="eqM-Jb-U31" firstAttribute="top" secondItem="z0v-8a-AYP" secondAttribute="top" constant="200" id="ckw-IX-0b1"/>
-                            <constraint firstItem="2ba-PA-4w6" firstAttribute="top" secondItem="z0v-8a-AYP" secondAttribute="top" constant="200" id="fMd-gD-2xb"/>
-                            <constraint firstItem="z0v-8a-AYP" firstAttribute="trailing" secondItem="2ba-PA-4w6" secondAttribute="trailing" constant="67" id="gg9-dP-7hA"/>
-                            <constraint firstItem="3Hc-dq-dEX" firstAttribute="leading" secondItem="z0v-8a-AYP" secondAttribute="leading" constant="30" id="iFn-Cm-r5D"/>
+                            <constraint firstItem="z0v-8a-AYP" firstAttribute="trailing" secondItem="3Hc-dq-dEX" secondAttribute="trailing" constant="20" id="YHu-cq-0fU"/>
+                            <constraint firstAttribute="trailing" secondItem="gCS-ZP-s2c" secondAttribute="trailing" constant="20" id="dXm-gc-OMv"/>
                             <constraint firstItem="CbI-6R-Wp1" firstAttribute="leading" secondItem="z0v-8a-AYP" secondAttribute="leading" constant="20" id="qQ5-g3-Kvh"/>
+                            <constraint firstItem="3Hc-dq-dEX" firstAttribute="top" secondItem="gCS-ZP-s2c" secondAttribute="bottom" id="rzO-8A-VDH"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="areaCollectionView" destination="3Hc-dq-dEX" id="qbi-J6-yhx"/>
                         <outlet property="backBtn" destination="CbI-6R-Wp1" id="Jia-KG-sgY"/>
-                        <outlet property="gyeonggiBtn" destination="eqM-Jb-U31" id="ILa-L9-9uL"/>
-                        <outlet property="inchonBtn" destination="2ba-PA-4w6" id="iL7-YR-dx4"/>
-                        <outlet property="seoulBtn" destination="BUY-gT-fO1" id="zAo-or-6bT"/>
+                        <outlet property="cityTabbarCollecionView" destination="gCS-ZP-s2c" id="VIc-kk-UP0"/>
                         <segue destination="lRD-st-pJl" kind="presentation" identifier="areaSearchVCToCafeBlogTableVC" modalPresentationStyle="fullScreen" id="5h7-Ns-5fr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EyP-ax-i7o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="967" y="-233"/>
+            <point key="canvasLocation" x="966.66666666666674" y="-233.03571428571428"/>
         </scene>
         <!--TagSearchController-->
         <scene sceneID="6g4-ML-bGG">
@@ -571,7 +583,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6yb-zp-I4a"/>
+        <segue reference="vFP-3n-ZmW"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="backward" catalog="system" width="128" height="79"/>
