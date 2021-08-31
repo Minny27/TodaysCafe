@@ -7,8 +7,8 @@
 
 import Foundation
 
-final class AreaViewModel {
-    let areaList: [Tag?] = [
+final class SeoulAreaViewModel {
+    let seoulAreaList: [Tag?] = [
         Tag("gangnam", "강남"),
         Tag("hongUni", "홍대"),
         Tag("hongUni", "신촌"),
@@ -20,11 +20,11 @@ final class AreaViewModel {
         Tag("itaewon", "이태원")
     ]
     
-    var countAreaList: Int {
-        return areaList.count
+    var countSeoulAreaList: Int {
+        return seoulAreaList.count
     }
     
-    func areaInfo(at index: Int) -> Tag {
-        return areaList[index]!
+    func seoulAreaInfo(at index: Int) -> Tag {
+        return seoulAreaList[index]!
     }
 }
