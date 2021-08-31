@@ -9,8 +9,9 @@ import UIKit
 import SwiftSoup
 
 class CafeBlogTableViewController: UIViewController {
-    var tagName: String?
     var areaName: String?
+    var tagName: String?
+    var cityName: String = ""
     var searchingContent: String = ""
     var urlQueryContent: String = ""
     
@@ -31,9 +32,8 @@ class CafeBlogTableViewController: UIViewController {
         super.viewWillAppear(true)
         
         if let areaName = self.areaName, let tagName = self.tagName{
-            urlQueryContent = areaName + " " + tagName[tagName.index(after: tagName.startIndex)...] + " 카페"
+            urlQueryContent = cityName + " " + areaName + " " + tagName[tagName.index(after: tagName.startIndex)...] + " 카페"
         }
-                
         self.fetchHTMLParsingResultWill {
             () in print()
         }
