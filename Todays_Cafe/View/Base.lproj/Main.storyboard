@@ -218,7 +218,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="30" height="20"/>
                                         <connections>
-                                            <outlet property="cityLabel" destination="kMR-vB-GVc" id="1NZ-48-HUO"/>
+                                            <outlet property="cityLabel" destination="kMR-vB-GVc" id="hqF-T1-zS7"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -297,6 +297,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="14z-pL-zt5" userLabel="ThemaTabbarCollecionView">
+                                <rect key="frame" x="20" y="184" width="374" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="mwE-hb-hTp"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="50" id="yo1-FU-vWW">
+                                    <size key="itemSize" width="30" height="20"/>
+                                    <size key="estimatedItemSize" width="30" height="20"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="65" minY="15" maxX="40" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="themaTabbarCollectionViewCell" id="ke3-kK-1iO" userLabel="ThemaTabbarCollecionViewCell" customClass="ThemaTabbarCollectionViewCell" customModule="Todays_Cafe" customModuleProvider="target">
+                                        <rect key="frame" x="65" y="15" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EbE-kp-9cf">
+                                            <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rY-kP-ugT" userLabel="TabbarLabel">
+                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="5rY-kP-ugT" secondAttribute="trailing" id="EFT-BS-Ezw"/>
+                                                <constraint firstItem="5rY-kP-ugT" firstAttribute="top" secondItem="EbE-kp-9cf" secondAttribute="top" id="Eer-wQ-LVI"/>
+                                                <constraint firstItem="5rY-kP-ugT" firstAttribute="leading" secondItem="EbE-kp-9cf" secondAttribute="leading" id="PeZ-Jg-Yha"/>
+                                                <constraint firstAttribute="bottom" secondItem="5rY-kP-ugT" secondAttribute="bottom" id="WD3-pD-fjg"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="tabbarLabel" destination="5rY-kP-ugT" id="iPy-6a-8bR"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xm0-n4-qya" userLabel="BackBtn">
                                 <rect key="frame" x="20" y="54" width="30" height="30"/>
                                 <constraints>
@@ -308,64 +349,42 @@
                                     <action selector="onBackBtnClicked:" destination="6gO-ZZ-zdZ" eventType="touchUpInside" id="8zx-6B-Tvz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llm-mo-Zmb" userLabel="RecommendTagBtn">
-                                <rect key="frame" x="80" y="244" width="100" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="5Mt-wH-6vj"/>
-                                    <constraint firstAttribute="height" constant="20" id="QLc-Zv-vGQ"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="onRecommendTagBtnClicked:" destination="6gO-ZZ-zdZ" eventType="touchUpInside" id="3oQ-D9-m9Z"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1AB-1D-STm" userLabel="RecentSearchTagBtn">
-                                <rect key="frame" x="200" y="244" width="150" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="FJ7-Ps-OPE"/>
-                                    <constraint firstAttribute="height" constant="20" id="Z5n-a6-Bz2"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="onRecentSearchTagBtnClicked:" destination="6gO-ZZ-zdZ" eventType="touchUpInside" id="p69-sr-rRF"/>
-                                </connections>
-                            </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oPE-6q-ABy" userLabel="TagCollectionView2">
-                                <rect key="frame" x="30" y="284" width="354" height="170"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oPE-6q-ABy" userLabel="ThemaCollectionView">
+                                <rect key="frame" x="20" y="234" width="374" height="170"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="170" id="32P-R1-5qp"/>
+                                    <constraint firstAttribute="height" constant="170" id="LZm-Bn-y7P"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="k14-C7-9Is">
-                                    <size key="itemSize" width="110" height="50"/>
+                                    <size key="itemSize" width="104" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tagCollectionViewCell2" id="QGe-dr-qVe" userLabel="TagCollectionViewCell2" customClass="TagCollectionViewCell2" customModule="Todays_Cafe" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="0.0" width="110" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="themaCollectionViewCell" id="QGe-dr-qVe" userLabel="ThemaCollectionViewCell" customClass="ThemaCollectionViewCell" customModule="Todays_Cafe" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="0.0" width="104" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ooc-zh-b6d">
-                                            <rect key="frame" x="0.0" y="0.0" width="110" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="104" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdh-ra-cDY" userLabel="TagLabel">
-                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="50"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uze-LB-5VH" userLabel="ThemaLabel">
+                                                    <rect key="frame" x="0.0" y="0.0" width="104" height="50"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="gdh-ra-cDY" secondAttribute="trailing" id="9eI-S8-pxr"/>
-                                                <constraint firstItem="gdh-ra-cDY" firstAttribute="leading" secondItem="ooc-zh-b6d" secondAttribute="leading" id="O2h-cc-lf0"/>
-                                                <constraint firstItem="gdh-ra-cDY" firstAttribute="top" secondItem="ooc-zh-b6d" secondAttribute="top" id="kLb-x1-JA8"/>
-                                                <constraint firstAttribute="bottom" secondItem="gdh-ra-cDY" secondAttribute="bottom" id="yE2-2x-Ire"/>
+                                                <constraint firstAttribute="bottom" secondItem="uze-LB-5VH" secondAttribute="bottom" id="L65-UP-FT6"/>
+                                                <constraint firstItem="uze-LB-5VH" firstAttribute="leading" secondItem="ooc-zh-b6d" secondAttribute="leading" id="UmB-RX-eHF"/>
+                                                <constraint firstAttribute="trailing" secondItem="uze-LB-5VH" secondAttribute="trailing" id="Xdc-Ni-15T"/>
+                                                <constraint firstItem="uze-LB-5VH" firstAttribute="top" secondItem="ooc-zh-b6d" secondAttribute="top" id="woy-hj-7XE"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
-                                            <outlet property="tagLabel" destination="gdh-ra-cDY" id="akf-K5-hOT"/>
+                                            <outlet property="themaLabel" destination="uze-LB-5VH" id="bSD-2W-fNO"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -374,24 +393,21 @@
                         <viewLayoutGuide key="safeArea" id="1SW-bZ-mmx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="llm-mo-Zmb" firstAttribute="leading" secondItem="1SW-bZ-mmx" secondAttribute="leading" constant="80" id="5x3-8G-fEy"/>
-                            <constraint firstItem="llm-mo-Zmb" firstAttribute="top" secondItem="1SW-bZ-mmx" secondAttribute="top" constant="200" id="FCf-YC-SLs"/>
+                            <constraint firstItem="1SW-bZ-mmx" firstAttribute="trailing" secondItem="14z-pL-zt5" secondAttribute="trailing" constant="20" id="8OO-pu-NQq"/>
                             <constraint firstItem="Xm0-n4-qya" firstAttribute="top" secondItem="1SW-bZ-mmx" secondAttribute="top" constant="10" id="Hau-4K-DCh"/>
-                            <constraint firstItem="1SW-bZ-mmx" firstAttribute="trailing" secondItem="oPE-6q-ABy" secondAttribute="trailing" constant="30" id="NHa-FB-dKq"/>
-                            <constraint firstItem="1AB-1D-STm" firstAttribute="top" secondItem="1SW-bZ-mmx" secondAttribute="top" constant="200" id="OA0-dM-pcg"/>
+                            <constraint firstItem="14z-pL-zt5" firstAttribute="top" secondItem="Xm0-n4-qya" secondAttribute="bottom" constant="100" id="Rpa-0c-sKx"/>
                             <constraint firstItem="Xm0-n4-qya" firstAttribute="leading" secondItem="1SW-bZ-mmx" secondAttribute="leading" constant="20" id="X8X-I8-gF6"/>
-                            <constraint firstItem="1SW-bZ-mmx" firstAttribute="trailing" secondItem="1AB-1D-STm" secondAttribute="trailing" constant="64" id="fbV-BV-bxp"/>
-                            <constraint firstItem="oPE-6q-ABy" firstAttribute="top" secondItem="llm-mo-Zmb" secondAttribute="bottom" constant="20" id="pGg-ZD-hSI"/>
-                            <constraint firstItem="1AB-1D-STm" firstAttribute="leading" secondItem="llm-mo-Zmb" secondAttribute="trailing" constant="20" id="tX8-Mw-IHs"/>
-                            <constraint firstItem="oPE-6q-ABy" firstAttribute="leading" secondItem="1SW-bZ-mmx" secondAttribute="leading" constant="30" id="v0V-5w-oGo"/>
+                            <constraint firstItem="1SW-bZ-mmx" firstAttribute="trailing" secondItem="oPE-6q-ABy" secondAttribute="trailing" constant="20" id="gHg-7C-1Fk"/>
+                            <constraint firstItem="oPE-6q-ABy" firstAttribute="leading" secondItem="1SW-bZ-mmx" secondAttribute="leading" constant="20" id="i9a-f4-7RK"/>
+                            <constraint firstItem="oPE-6q-ABy" firstAttribute="top" secondItem="14z-pL-zt5" secondAttribute="bottom" id="sxB-kw-PvH"/>
+                            <constraint firstItem="14z-pL-zt5" firstAttribute="leading" secondItem="1SW-bZ-mmx" secondAttribute="leading" constant="20" id="ydI-y9-ANh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3Qg-el-M4J"/>
                     <connections>
                         <outlet property="backBtn" destination="Xm0-n4-qya" id="KbU-fa-Ev9"/>
-                        <outlet property="recentSearchTagBtn" destination="1AB-1D-STm" id="i1i-Uk-yaD"/>
-                        <outlet property="recommendTagBtn" destination="llm-mo-Zmb" id="ZBN-6u-f6v"/>
-                        <outlet property="tagCollectionView2" destination="oPE-6q-ABy" id="Y5h-pl-vNP"/>
+                        <outlet property="themaCollectionView" destination="oPE-6q-ABy" id="Aee-lz-hJ6"/>
+                        <outlet property="themaTabbarCollectionView" destination="14z-pL-zt5" id="FoH-Uf-z9m"/>
                         <segue destination="FYA-Jy-s9U" kind="presentation" identifier="tagSearchVCToAreaSearchVC" modalPresentationStyle="fullScreen" id="6yb-zp-I4a"/>
                     </connections>
                 </viewController>
