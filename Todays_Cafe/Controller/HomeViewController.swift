@@ -62,6 +62,10 @@ class HomeViewController: UIViewController {
             areaSearchViewController.tagName = tagInfo.tagName
         }
     }
+    
+    fileprivate func saveNewTag(_ tagId: String, _ tagName: String) {
+        CoreDataManager.shared.saveRecentTag(tagId, tagName)
+    }
 }
 
 // MARK: - FSPagerViewDataSource
@@ -114,5 +118,7 @@ extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let tagInfo = tagViewModel.tagInfo(at: indexPath.item)
         performSegue(withIdentifier: "homeVCToAreaSearchVC", sender: tagInfo)
+        saveNewTag(tagInfo.tagId, tagInfo.tagName)
     }
+    
 }

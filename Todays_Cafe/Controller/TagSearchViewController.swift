@@ -8,14 +8,18 @@
 import UIKit
 
 class TagSearchViewController: UIViewController {
-    let tagViewModel2 = TagViewModel2()
-    let tagCollectionViewCell2 = TagCollectionViewCell2()
+    let themaTabbarViewModel = ThemaTabbarViewModel()
+    let recommendationThemaViewModel = RecommendationThemaViewModel()
+    var recentSearchThemaViewModel = RecentSearchThemaViewModel()
+    var checkThemaHashTable: [String: Int] = ["recommendation": 1, "recentSearch": 0]
     
-    @IBOutlet weak var tagCollectionView2: UICollectionView! {
+    @IBOutlet weak var themaTabbarCollectionView: UICollectionView!
+    
+    @IBOutlet weak var themaCollectionView: UICollectionView! {
         didSet {
-            self.tagCollectionView2.layer.borderWidth = 1.5
-            self.tagCollectionView2.layer.borderColor = UIColor.lightGray.cgColor
-            self.tagCollectionView2.layer.cornerRadius = 10
+            self.themaCollectionView.layer.borderWidth = 1.5
+            self.themaCollectionView.layer.borderColor = UIColor.lightGray.cgColor
+            self.themaCollectionView.layer.cornerRadius = 10
         }
     }
     
@@ -28,30 +32,13 @@ class TagSearchViewController: UIViewController {
         }
     }
     
-    
-    @IBOutlet weak var recommendTagBtn: UIButton! {
-        didSet {
-            self.recommendTagBtn.setTitle("추천 테마", for: .normal)
-            self.recommendTagBtn.setTitleColor(.gray, for: .normal)
-            self.recommendTagBtn.titleLabel?.font = .boldSystemFont(ofSize: 20)
-            self.recommendTagBtn.contentHorizontalAlignment = .right
-        }
-    }
-    
-    @IBOutlet weak var recentSearchTagBtn: UIButton! {
-        didSet {
-            self.recentSearchTagBtn.setTitle("최근 검색 테마", for: .normal)
-            self.recentSearchTagBtn.setTitleColor(.gray, for: .normal)
-            self.recentSearchTagBtn.titleLabel?.font = .boldSystemFont(ofSize: 20)
-            self.recentSearchTagBtn.contentHorizontalAlignment = .left
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tagCollectionView2.delegate = self
-        self.tagCollectionView2.dataSource = self
+        themaTabbarCollectionView.dataSource = self
+        themaTabbarCollectionView.delegate = self
+        themaCollectionView.dataSource = self
+        themaCollectionView.delegate = self
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -61,37 +48,87 @@ class TagSearchViewController: UIViewController {
         }
     }
     
+    func saveNewTag(_ tagId: String, _ tagName: String) {
+        CoreDataManager.shared.saveRecentTag(tagId, tagName)
+    }
+    
+    func getTagInfoList() {
+        recentSearchThemaViewModel.themaList = CoreDataManager.shared.getRecentTag()
+    }
+    
     @IBAction func onBackBtnClicked(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func onRecommendTagBtnClicked(_ sender: UIButton) {
-    }
-    
-    
-    @IBAction func onRecentSearchTagBtnClicked(_ sender: Any) {
     }
 }
 
 // MARK: - UICollectionViewDataSource
 extension TagSearchViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tagViewModel2.countTagList
+        if collectionView == themaTabbarCollectionView {
+            return themaTabbarViewModel.countThemaList
+        }
+        else {
+            if checkThemaHashTable["recommendation"] == 1 {
+                return recommendationThemaViewModel.countThemaList
+            }
+            else {
+                return recentSearchThemaViewModel.countThemaList
+            }
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tagCollectionViewCell2", for: indexPath) as? TagCollectionViewCell2 else { return UICollectionViewCell()
+        if collectionView == themaTabbarCollectionView {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "themaTabbarCollectionViewCell", for: indexPath) as? ThemaTabbarCollectionViewCell else { return UICollectionViewCell()
+            }
+            let themaInfo = themaTabbarViewModel.themaInfo(at: indexPath.item)
+            cell.update(themaInfo: themaInfo)
+            return cell
         }
-        let cellInfo = tagViewModel2.tagInfo(at: indexPath.item)
-        cell.update(tagInfo: cellInfo)
-        return cell
+        else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "themaCollectionViewCell", for: indexPath) as? ThemaCollectionViewCell else { return UICollectionViewCell()
+            }
+            if checkThemaHashTable["recommendation"] == 1 {
+                let themaInfo = recommendationThemaViewModel.themaInfo(at: indexPath.item)
+                cell.updateRecommendation(themaInfo: themaInfo)
+                return cell
+            }
+            else {
+                let themaInfo = recentSearchThemaViewModel.themaInfo(at: indexPath.item)
+                cell.updateRecentSearch(themaInfo: themaInfo)
+                return cell
+            }
+        }
+        
     }
 }
 
 // MARK: - UICollectionViewDelegate
 extension TagSearchViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let tagInfo = tagViewModel2.tagInfo(at: indexPath.item)
-        performSegue(withIdentifier: "tagSearchVCToAreaSearchVC", sender: tagInfo)
+        if collectionView == themaTabbarCollectionView {
+            var checkThemaHashTableCache = checkThemaHashTable
+            let tabbarInfo = themaTabbarViewModel.themaInfo(at: indexPath.item)
+            
+            if tabbarInfo.tagId == "recommendation" {
+                checkThemaHashTableCache["recommendation"] = 1
+                checkThemaHashTableCache["recentSearch"] = 0
+            }
+            else {
+                checkThemaHashTableCache["recommendation"] = 0
+                checkThemaHashTableCache["recentSearch"] = 1
+                getTagInfoList()
+            }
+            if checkThemaHashTableCache != checkThemaHashTable {
+                checkThemaHashTable = checkThemaHashTableCache
+                themaCollectionView.reloadData()
+            }
+        }
+        
+        else {
+            let themaInfo = recommendationThemaViewModel.themaInfo(at: indexPath.item)
+            performSegue(withIdentifier: "tagSearchVCToAreaSearchVC", sender: themaInfo)
+            saveNewTag(themaInfo.tagId, themaInfo.tagName)
+        }
     }
 }

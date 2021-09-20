@@ -7,8 +7,8 @@
 
 import Foundation
 
-final class TagViewModel2 {
-    let tagList: [Tag?] = [
+final class RecommendationThemaViewModel {
+    let themaList: [Tag?] = [
         Tag("outdoorSeat", "#야외석 있는"),
         Tag("mood", "#분위기 좋은"),
         Tag("desert", "#디저트가 맛있는"),
@@ -20,11 +20,11 @@ final class TagViewModel2 {
         Tag("refill","#리필가능")
     ]
     
-    var countTagList: Int {
-        return tagList.count
+    var countThemaList: Int {
+        return themaList.count
     }
     
-    func tagInfo(at index: Int) -> Tag {
-        return tagList[index]!
+    func themaInfo(at index: Int) -> Tag {
+        return themaList[index]!
     }
 }

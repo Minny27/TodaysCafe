@@ -117,27 +117,27 @@ extension AreaSearchViewController: UICollectionViewDataSource {
 extension AreaSearchViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == cityTabbarCollecionView {
-            var cacheCheckCityHashTable = checkCityHashTable
+            var checkCityHashTableCache = checkCityHashTable
             let cityInfo = cityTabbarViewModel.cityInfo(at : indexPath.item)
             
             if cityInfo.tagId == "seoul" {
-                cacheCheckCityHashTable["seoul"] = 1
-                cacheCheckCityHashTable["gyeonggi"] = 0
-                cacheCheckCityHashTable["incheon"] = 0
+                checkCityHashTableCache["seoul"] = 1
+                checkCityHashTableCache["gyeonggi"] = 0
+                checkCityHashTableCache["incheon"] = 0
             }
             else if cityInfo.tagId == "gyeonggi" {
-                cacheCheckCityHashTable["seoul"] = 0
-                cacheCheckCityHashTable["gyeonggi"] = 1
-                cacheCheckCityHashTable["incheon"] = 0
+                checkCityHashTableCache["seoul"] = 0
+                checkCityHashTableCache["gyeonggi"] = 1
+                checkCityHashTableCache["incheon"] = 0
             }
             else {
-                cacheCheckCityHashTable["seoul"] = 0
-                cacheCheckCityHashTable["gyeonggi"] = 0
-                cacheCheckCityHashTable["incheon"] = 1
+                checkCityHashTableCache["seoul"] = 0
+                checkCityHashTableCache["gyeonggi"] = 0
+                checkCityHashTableCache["incheon"] = 1
             }
             
-            if cacheCheckCityHashTable != checkCityHashTable {
-                checkCityHashTable = cacheCheckCityHashTable
+            if checkCityHashTableCache != checkCityHashTable {
+                checkCityHashTable = checkCityHashTableCache
                 areaCollectionView.reloadData()
             }
         }
