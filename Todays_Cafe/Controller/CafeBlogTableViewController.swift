@@ -46,29 +46,49 @@ class CafeBlogTableViewController: UIViewController {
     func fetchHTMLParsingResultWill(completion: @escaping() -> ()) {
         let urlString = "https://search.naver.com/search.naver?query=" + urlQueryContent + "&nso=&where=blog&sm=tab_opt"
         let urlAddress = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        guard let url = URL(string: urlAddress) else { return }
+        guard let url = URL(string: urlAddress) else {
+            print(NetworkError.invalidURL)
+            return
+        }
         do {
-            let html = try String(contentsOf: url, encoding: .utf8)
-
-            let doc: Document = try SwiftSoup.parse(html)
+            guard let html = try? String(contentsOf: url, encoding: .utf8)
+            else {
+                print(NetworkError.invalidHTML)
+                return
+            }
+            
+            guard let document: Document = try? SwiftSoup.parse(html)
+            else {
+                print(NetworkError.invalidParsing)
+                return
+            }
+            
             for blogIndex in 1...10 {
                 let blogIndex = String(blogIndex)
 
-                let ImageSrcData: Elements = try doc.select("div._more_contents_event_base").select("ul.lst_total").select("li#sp_blog_\(blogIndex).bx").select("img[src]")
-                let ImageSrcArray = ImageSrcData.array()
+                let ImageSourceData: Elements = try document.select("div._more_contents_event_base").select("ul.lst_total").select("li#sp_blog_\(blogIndex).bx").select("img[src]")
+                let ImageSourceArray = ImageSourceData.array()
                 
                 // 썸네일
-                let blogThumnailStringName = try ImageSrcArray[1].attr("src").description
-                guard let blogThumnailUrlImage = URL(string: blogThumnailStringName) else { return }
+                let blogThumnailStringName = try ImageSourceArray[1].attr("src").description
+                guard let blogThumnailUrlImage = URL(string: blogThumnailStringName)
+                else {
+                    print(NetworkError.invalidBlogThumbnail)
+                    return
+                }
                 let blogThumbnail = try Data(contentsOf: blogThumnailUrlImage)
 
                 // 블로거 이미지
-                let blogerImgStringImage = try ImageSrcArray[0].attr("src").description
-                guard let blogerImgStringImageUrlImage = URL(string: blogerImgStringImage) else { return }
+                let blogerImgStringImage = try ImageSourceArray[0].attr("src").description
+                guard let blogerImgStringImageUrlImage = URL(string: blogerImgStringImage)
+                else {
+                    print(NetworkError.invalidBlogerImage)
+                    return
+                }
                 let blogerImage = try Data(contentsOf: blogerImgStringImageUrlImage)
                 
-                
-                let blogerTextData: Elements = try doc.select("div._more_contents_event_base").select("ul.lst_total").select("li#sp_blog_\(blogIndex).bx").select("div.total_sub").select("span")
+            
+                let blogerTextData: Elements = try document.select("div._more_contents_event_base").select("ul.lst_total").select("li#sp_blog_\(blogIndex).bx").select("div.total_sub").select("span")
                 var blogerTextArray = try blogerTextData.array()[1].text().components(separatedBy: " ")
                 
                 // 블로거 업로드 날짜
@@ -81,14 +101,22 @@ class CafeBlogTableViewController: UIViewController {
                 // 블로거 이름
                 let blogerName = blogerTextArray.joined(separator: " ")
                                 
-                let blogTextData: Elements = try doc.select("div._more_contents_event_base").select("ul.lst_total").select("li#sp_blog_\(blogIndex).bx").select("div.total_area").select("a")
+                let blogTextData: Elements = try document.select("div._more_contents_event_base").select("ul.lst_total").select("li#sp_blog_\(blogIndex).bx").select("div.total_area").select("a")
                 let blogTextArray = blogTextData.array()
                 
                 // 블로그 타이틀
-                let blogTitle = try String(blogTextArray[blogTextArray.count - 2].text())
+                guard let blogTitle = try? String(blogTextArray[blogTextArray.count - 2].text())
+                else {
+                    print(NetworkError.invalidBlogTitle)
+                    return
+                }
                 
                 // 블로그 컨텐츠
-                let blogContent = try String(blogTextArray[blogTextArray.count - 1].text())
+                guard let blogContent = try? String(blogTextArray[blogTextArray.count - 1].text())
+                else {
+                    print(NetworkError.invalidBlogContetnt)
+                    return
+                }
                 
                 let blogLinkSplit = try blogTextArray[blogTextArray.count - 1].absUrl("href").components(separatedBy: "?")
                 let blogUrl = blogLinkSplit[0]
@@ -101,12 +129,11 @@ class CafeBlogTableViewController: UIViewController {
                 blogDetailUrl.insert(contentsOf: "m.", at: mobileKeywordIndex)
                                 
                 let cafeBlogTableViewCell = CafeBlogCellInfo(UIImage(data: blogThumbnail)!, UIImage(data: blogerImage)!, blogerName, blogerUploadDate, blogTitle, blogContent, blogDetailUrl)
+                
                 cafeBlogViewModel.appendCafeBlog(cafeBlogTableViewCell)
             }
-        } catch Exception.Error(let type, let message) {
-            print(message)
         } catch {
-            print("error")
+            print(NetworkError.invalidRequest)
         }
     }
     
