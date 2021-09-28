@@ -19,12 +19,12 @@ class CafeBlogTableViewController: UIViewController {
     
     @IBOutlet weak var cafeBlogTableView: UITableView!
     
-    @IBOutlet weak var backBtn: UIButton! {
+    @IBOutlet weak var backButton: UIButton! {
         didSet {
-            self.backBtn.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
-            self.backBtn.contentHorizontalAlignment = .fill
-            self.backBtn.contentVerticalAlignment = .fill
-            self.backBtn.tintColor = .darkGray
+            self.backButton.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
+            self.backButton.contentHorizontalAlignment = .fill
+            self.backButton.contentVerticalAlignment = .fill
+            self.backButton.tintColor = .darkGray
         }
     }
     
@@ -117,8 +117,8 @@ class CafeBlogTableViewController: UIViewController {
         }
     }
     
-    @IBAction func onBackBtnClicked() {
-        dismiss(animated: true, completion: nil)
+    @IBAction func onBackButtonClicked() {
+        dismiss(animated: false, completion: nil)
     }
 }
 

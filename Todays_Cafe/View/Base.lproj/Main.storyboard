@@ -80,7 +80,7 @@
                                     <color key="titleColor" name="AccentColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="6gO-ZZ-zdZ" kind="presentation" identifier="homeVCToTagSearchVC" modalPresentationStyle="fullScreen" id="o75-tv-Ded"/>
+                                    <segue destination="6gO-ZZ-zdZ" kind="presentation" identifier="homeVCToTagSearchVC" animates="NO" modalPresentationStyle="fullScreen" id="o75-tv-Ded"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HbY-ZW-wfs" userLabel="TagCollectionView">
@@ -155,7 +155,7 @@
                         <outlet property="myPagerView" destination="TOV-3r-sjg" id="4Nc-Lv-RKX"/>
                         <outlet property="tagCollectionView" destination="HbY-ZW-wfs" id="dUV-Vi-3OL"/>
                         <outlet property="tagSearchBtn" destination="jTF-RP-cFV" id="1UO-WF-DkK"/>
-                        <segue destination="FYA-Jy-s9U" kind="presentation" identifier="homeVCToAreaSearchVC" modalPresentationStyle="fullScreen" id="vFP-3n-ZmW"/>
+                        <segue destination="FYA-Jy-s9U" kind="presentation" identifier="homeVCToAreaSearchVC" animates="NO" modalPresentationStyle="fullScreen" id="vFP-3n-ZmW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -170,7 +170,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CbI-6R-Wp1" userLabel="BackBtn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CbI-6R-Wp1" userLabel="BackButton">
                                 <rect key="frame" x="20" y="54" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="atL-Cu-oAc"/>
@@ -178,7 +178,7 @@
                                 </constraints>
                                 <state key="normal" image="pencil" catalog="system"/>
                                 <connections>
-                                    <action selector="onClickBackBtn:" destination="FYA-Jy-s9U" eventType="touchUpInside" id="6kb-OJ-28b"/>
+                                    <action selector="onBackButtonClicked:" destination="FYA-Jy-s9U" eventType="touchUpInside" id="p9c-ez-4z2"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gCS-ZP-s2c" userLabel="CityTabbarCollectionView">
@@ -280,9 +280,9 @@
                     </view>
                     <connections>
                         <outlet property="areaCollectionView" destination="3Hc-dq-dEX" id="qbi-J6-yhx"/>
-                        <outlet property="backBtn" destination="CbI-6R-Wp1" id="Jia-KG-sgY"/>
+                        <outlet property="backButton" destination="CbI-6R-Wp1" id="C1C-Z2-nCP"/>
                         <outlet property="cityTabbarCollecionView" destination="gCS-ZP-s2c" id="VIc-kk-UP0"/>
-                        <segue destination="lRD-st-pJl" kind="presentation" identifier="areaSearchVCToCafeBlogTableVC" modalPresentationStyle="fullScreen" id="5h7-Ns-5fr"/>
+                        <segue destination="lRD-st-pJl" kind="presentation" identifier="areaSearchVCToCafeBlogTableVC" animates="NO" modalPresentationStyle="fullScreen" id="5h7-Ns-5fr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EyP-ax-i7o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -338,7 +338,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xm0-n4-qya" userLabel="BackBtn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xm0-n4-qya" userLabel="BackButton">
                                 <rect key="frame" x="20" y="54" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="MsO-Xj-PZx"/>
@@ -346,7 +346,7 @@
                                 </constraints>
                                 <state key="normal" image="backward" catalog="system"/>
                                 <connections>
-                                    <action selector="onBackBtnClicked:" destination="6gO-ZZ-zdZ" eventType="touchUpInside" id="8zx-6B-Tvz"/>
+                                    <action selector="onBackButtonClicked:" destination="6gO-ZZ-zdZ" eventType="touchUpInside" id="6pa-Sl-oEn"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oPE-6q-ABy" userLabel="ThemaCollectionView">
@@ -405,10 +405,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="3Qg-el-M4J"/>
                     <connections>
-                        <outlet property="backBtn" destination="Xm0-n4-qya" id="KbU-fa-Ev9"/>
+                        <outlet property="backButton" destination="Xm0-n4-qya" id="ZrR-Sk-7b4"/>
                         <outlet property="themaCollectionView" destination="oPE-6q-ABy" id="Aee-lz-hJ6"/>
                         <outlet property="themaTabbarCollectionView" destination="14z-pL-zt5" id="FoH-Uf-z9m"/>
-                        <segue destination="FYA-Jy-s9U" kind="presentation" identifier="tagSearchVCToAreaSearchVC" modalPresentationStyle="fullScreen" id="6yb-zp-I4a"/>
+                        <segue destination="FYA-Jy-s9U" kind="presentation" identifier="tagSearchVCToAreaSearchVC" animates="NO" modalPresentationStyle="fullScreen" id="6yb-zp-I4a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ni-dQ-xnl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -423,7 +423,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCq-YP-efa" userLabel="BackBtn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCq-YP-efa" userLabel="BackButton">
                                 <rect key="frame" x="20" y="54" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Sz1-Ae-O0f"/>
@@ -431,7 +431,7 @@
                                 </constraints>
                                 <state key="normal" image="square.and.arrow.down.fill" catalog="system"/>
                                 <connections>
-                                    <action selector="onBackBtnClicked" destination="lRD-st-pJl" eventType="touchUpInside" id="3QI-Wt-PLO"/>
+                                    <action selector="onBackButtonClicked" destination="lRD-st-pJl" eventType="touchUpInside" id="iau-JL-f2b"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SkK-2F-PgZ" userLabel="CafeBlogTableView">
@@ -539,24 +539,24 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backBtn" destination="eCq-YP-efa" id="7Me-ck-h3O"/>
+                        <outlet property="backButton" destination="eCq-YP-efa" id="06i-8E-wSX"/>
                         <outlet property="cafeBlogTableView" destination="SkK-2F-PgZ" id="2ob-YV-3tE"/>
-                        <segue destination="On1-MC-PcF" kind="presentation" identifier="cafeBlogTableVCToCafeBlogDetailVC" modalPresentationStyle="fullScreen" id="LkO-mv-oE5"/>
+                        <segue destination="On1-MC-PcF" kind="presentation" identifier="cafeBlogTableVCToCafeBlogDetailVC" animates="NO" modalPresentationStyle="fullScreen" id="LkO-mv-oE5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qJl-Zd-Q13" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2100" y="108.48214285714285"/>
         </scene>
-        <!--Cafe Blog Detail View Controller-->
+        <!--CafeBlogDetailViewController-->
         <scene sceneID="AmA-2O-5oz">
             <objects>
-                <viewController id="On1-MC-PcF" customClass="CafeBlogDetailViewController" customModule="Todays_Cafe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="On1-MC-PcF" userLabel="CafeBlogDetailViewController" customClass="CafeBlogDetailViewController" customModule="Todays_Cafe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EAC-v7-bIk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQP-ec-bWi" userLabel="BackBtn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQP-ec-bWi" userLabel="BackButton">
                                 <rect key="frame" x="20" y="54" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="MXw-az-sU1"/>
@@ -564,7 +564,7 @@
                                 </constraints>
                                 <state key="normal" image="lasso" catalog="system"/>
                                 <connections>
-                                    <action selector="onBackBtnClicked" destination="On1-MC-PcF" eventType="touchUpInside" id="yNo-M2-7WV"/>
+                                    <action selector="onBackBtnClicked" destination="On1-MC-PcF" eventType="touchUpInside" id="hOV-c4-7pS"/>
                                 </connections>
                             </button>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVK-ja-QF6" userLabel="CafeBlogDetailView">
@@ -589,7 +589,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backBtn" destination="DQP-ec-bWi" id="1Bh-uc-yNf"/>
+                        <outlet property="backButton" destination="DQP-ec-bWi" id="8Ik-VZ-O3f"/>
                         <outlet property="cafeBlogDetailView" destination="KVK-ja-QF6" id="Xwh-8P-8mI"/>
                     </connections>
                 </viewController>
