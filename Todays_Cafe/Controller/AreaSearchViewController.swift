@@ -78,7 +78,6 @@ extension AreaSearchViewController: UICollectionViewDataSource {
                 return incheonAreaViewModel.countIncheonAreaList
             }
         }
-
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -90,6 +89,7 @@ extension AreaSearchViewController: UICollectionViewDataSource {
             cell.update(cityInfo: cityInfo)
             return cell
         }
+        
         else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "areaCollectionViewCell", for: indexPath) as? AreaCollectionViewCell else {
                 return UICollectionViewCell()

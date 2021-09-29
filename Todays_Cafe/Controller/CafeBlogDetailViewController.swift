@@ -29,8 +29,13 @@ class CafeBlogDetailViewController: UIViewController {
     }
     
     func loadWebView(_ blogDetailUrl: String) {
-        let url = URL(string: blogDetailUrl)
-        let request = URLRequest(url: url!)
+        guard let url = URL(string: blogDetailUrl)
+        else {
+            print(NetworkError.invalidURL)
+            return
+        }
+        
+        let request = URLRequest(url: url)
         cafeBlogDetailView.load(request)
     }
     

@@ -120,5 +120,4 @@ extension HomeViewController: UICollectionViewDelegate {
         performSegue(withIdentifier: "homeVCToAreaSearchVC", sender: tagInfo)
         saveNewTag(tagInfo.tagId, tagInfo.tagName)
     }
-    
 }

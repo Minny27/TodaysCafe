@@ -31,6 +31,7 @@
 		56734CDB26A15F88006EB938 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56734CD926A15F88006EB938 /* LaunchScreen.storyboard */; };
 		567DE50026AFAAC800BA8594 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567DE4FF26AFAAC800BA8594 /* Banner.swift */; };
 		567DE50326AFAF2B00BA8594 /* BannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567DE50226AFAF2B00BA8594 /* BannerViewModel.swift */; };
+		5695EA5127035BA9003FDCA2 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5695EA5027035BA9003FDCA2 /* NetworkError.swift */; };
 		56A1BB2326DF680A004F790A /* RecentSearchTagModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 56A1BB2126DF680A004F790A /* RecentSearchTagModel.xcdatamodeld */; };
 		56A1BB2926DF9B4D004F790A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A1BB2826DF9B4D004F790A /* CoreDataManager.swift */; };
 		56A1BB3626DFDE5E004F790A /* RecentSearchTag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A1BB3426DFDE5E004F790A /* RecentSearchTag+CoreDataClass.swift */; };
@@ -73,6 +74,7 @@
 		56734CDC26A15F88006EB938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		567DE4FF26AFAAC800BA8594 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 		567DE50226AFAF2B00BA8594 /* BannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewModel.swift; sourceTree = "<group>"; };
+		5695EA5027035BA9003FDCA2 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		56A1BB2226DF680A004F790A /* RecentSearchTagMoel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecentSearchTagMoel.xcdatamodel; sourceTree = "<group>"; };
 		56A1BB2826DF9B4D004F790A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		56A1BB3426DFDE5E004F790A /* RecentSearchTag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecentSearchTag+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -158,10 +160,19 @@
 				569FB48026A7E65B00A93B08 /* Controller */,
 				56A1BB2526DF92AC004F790A /* CoreData */,
 				56A1BB2726DF9B3D004F790A /* CoreDataManager */,
+				5695EA4F27035AD1003FDCA2 /* Error */,
 				569FB48326A7E72F00A93B08 /* AppDelegate */,
 				5604FD1226A1D953004DC9AF /* Resource */,
 			);
 			path = Todays_Cafe;
+			sourceTree = "<group>";
+		};
+		5695EA4F27035AD1003FDCA2 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				5695EA5027035BA9003FDCA2 /* NetworkError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		569FB47F26A7E65100A93B08 /* View */ = {
@@ -375,6 +386,7 @@
 				5636EFB926C5774400C61303 /* CafeBlogViewModel.swift in Sources */,
 				5636EFB626C53FC400C61303 /* CafeBlogCellInfo.swift in Sources */,
 				56A1BB3626DFDE5E004F790A /* RecentSearchTag+CoreDataClass.swift in Sources */,
+				5695EA5127035BA9003FDCA2 /* NetworkError.swift in Sources */,
 				56C8FC1C26B5205D00CC700A /* AreaSearchViewController.swift in Sources */,
 				56A1BB3726DFDE5E004F790A /* RecentSearchTag+CoreDataProperties.swift in Sources */,
 				56E4058126DD29DC007E61D6 /* CityTabbarViewModel.swift in Sources */,
