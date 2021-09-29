@@ -11,7 +11,7 @@ final class ThemaCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var themaLabel: UILabel! {
         didSet {
             themaLabel.textColor = .systemTeal
-            themaLabel.font = .boldSystemFont(ofSize: 15)
+            themaLabel.font = .boldSystemFont(ofSize: 13)
             themaLabel.textAlignment = .center
         }
     }

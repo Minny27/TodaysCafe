@@ -26,12 +26,12 @@ class AreaSearchViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var backBtn: UIButton! {
+    @IBOutlet weak var backButton: UIButton! {
         didSet {
-            self.backBtn.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
-            self.backBtn.contentHorizontalAlignment = .fill
-            self.backBtn.contentVerticalAlignment = .fill
-            self.backBtn.tintColor = .darkGray
+            self.backButton.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
+            self.backButton.contentHorizontalAlignment = .fill
+            self.backButton.contentVerticalAlignment = .fill
+            self.backButton.tintColor = .darkGray
         }
     }
     
@@ -56,8 +56,8 @@ class AreaSearchViewController: UIViewController {
         }
     }
     
-    @IBAction func onClickBackBtn(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+    @IBAction func onBackButtonClicked(_ sender: UIButton) {
+        dismiss(animated: false, completion: nil)
     }
 }
 
@@ -78,7 +78,6 @@ extension AreaSearchViewController: UICollectionViewDataSource {
                 return incheonAreaViewModel.countIncheonAreaList
             }
         }
-
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -90,6 +89,7 @@ extension AreaSearchViewController: UICollectionViewDataSource {
             cell.update(cityInfo: cityInfo)
             return cell
         }
+        
         else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "areaCollectionViewCell", for: indexPath) as? AreaCollectionViewCell else {
                 return UICollectionViewCell()

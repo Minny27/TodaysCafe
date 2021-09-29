@@ -13,12 +13,12 @@ class CafeBlogDetailViewController: UIViewController {
     
     @IBOutlet var cafeBlogDetailView: WKWebView!
     
-    @IBOutlet weak var backBtn: UIButton! {
+    @IBOutlet weak var backButton: UIButton! {
         didSet {
-            self.backBtn.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
-            self.backBtn.contentHorizontalAlignment = .fill
-            self.backBtn.contentVerticalAlignment = .fill
-            self.backBtn.tintColor = .darkGray
+            self.backButton.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
+            self.backButton.contentHorizontalAlignment = .fill
+            self.backButton.contentVerticalAlignment = .fill
+            self.backButton.tintColor = .darkGray
         }
     }
     
@@ -29,17 +29,17 @@ class CafeBlogDetailViewController: UIViewController {
     }
     
     func loadWebView(_ blogDetailUrl: String) {
-        let url = URL(string: blogDetailUrl)
-        let request = URLRequest(url: url!)
+        guard let url = URL(string: blogDetailUrl)
+        else {
+            print(NetworkError.invalidURL)
+            return
+        }
+        
+        let request = URLRequest(url: url)
         cafeBlogDetailView.load(request)
     }
     
     @IBAction func onBackBtnClicked() {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: false, completion: nil)
     }
-}
-
-// MARK: - WKUIDelegate
-extension CafeBlogDetailViewController: WKUIDelegate {
-
 }
