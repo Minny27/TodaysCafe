@@ -122,7 +122,7 @@
 		56734CC226A15F87006EB938 = {
 			isa = PBXGroup;
 			children = (
-				56734CCD26A15F87006EB938 /* Todays_Cafe */,
+				56734CCD26A15F87006EB938 /* TodaysCafe */,
 				56734CCC26A15F87006EB938 /* Products */,
 				2B06376F4F139F2CEABECCDB /* Pods */,
 				E1D7C5127BFA313E49D2C483 /* Frameworks */,
@@ -137,7 +137,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		56734CCD26A15F87006EB938 /* Todays_Cafe */ = {
+		56734CCD26A15F87006EB938 /* TodaysCafe */ = {
 			isa = PBXGroup;
 			children = (
 				5639B85526D3E8B00080791B /* Protocol */,
@@ -148,7 +148,7 @@
 				569FB48026A7E65B00A93B08 /* Controller */,
 				5604FD1226A1D953004DC9AF /* Resource */,
 			);
-			path = Todays_Cafe;
+			path = TodaysCafe;
 			sourceTree = "<group>";
 		};
 		569FB47F26A7E65100A93B08 /* View */ = {
