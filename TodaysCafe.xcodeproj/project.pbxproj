@@ -51,7 +51,7 @@
 		5636EFB826C5774400C61303 /* CafeBlogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeBlogViewModel.swift; sourceTree = "<group>"; };
 		5636EFBC26C5808F00C61303 /* CafeBlogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeBlogTableViewCell.swift; sourceTree = "<group>"; };
 		5639B85C26D3EE250080791B /* PagingTabbarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingTabbarDelegate.swift; sourceTree = "<group>"; };
-		56734CCB26A15F87006EB938 /* Todays_Cafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todays_Cafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		56734CCB26A15F87006EB938 /* TodaysCafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodaysCafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56734CCE26A15F87006EB938 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56734CD026A15F87006EB938 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		56734CD226A15F87006EB938 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 		56734CCC26A15F87006EB938 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				56734CCB26A15F87006EB938 /* Todays_Cafe.app */,
+				56734CCB26A15F87006EB938 /* TodaysCafe.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -218,9 +218,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		56734CCA26A15F87006EB938 /* Todays_Cafe */ = {
+		56734CCA26A15F87006EB938 /* TodaysCafe */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 56734CDF26A15F88006EB938 /* Build configuration list for PBXNativeTarget "Todays_Cafe" */;
+			buildConfigurationList = 56734CDF26A15F88006EB938 /* Build configuration list for PBXNativeTarget "TodaysCafe" */;
 			buildPhases = (
 				8DD50B1B9B996466E24C74F1 /* [CP] Check Pods Manifest.lock */,
 				56734CC726A15F87006EB938 /* Sources */,
@@ -232,9 +232,9 @@
 			);
 			dependencies = (
 			);
-			name = Todays_Cafe;
+			name = TodaysCafe;
 			productName = Todays_Cafe;
-			productReference = 56734CCB26A15F87006EB938 /* Todays_Cafe.app */;
+			productReference = 56734CCB26A15F87006EB938 /* TodaysCafe.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -251,7 +251,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 56734CC626A15F87006EB938 /* Build configuration list for PBXProject "Todays_Cafe" */;
+			buildConfigurationList = 56734CC626A15F87006EB938 /* Build configuration list for PBXProject "TodaysCafe" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -264,7 +264,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				56734CCA26A15F87006EB938 /* Todays_Cafe */,
+				56734CCA26A15F87006EB938 /* TodaysCafe */,
 			);
 		};
 /* End PBXProject section */
@@ -536,7 +536,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		56734CC626A15F87006EB938 /* Build configuration list for PBXProject "Todays_Cafe" */ = {
+		56734CC626A15F87006EB938 /* Build configuration list for PBXProject "TodaysCafe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				56734CDD26A15F88006EB938 /* Debug */,
@@ -545,7 +545,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		56734CDF26A15F88006EB938 /* Build configuration list for PBXNativeTarget "Todays_Cafe" */ = {
+		56734CDF26A15F88006EB938 /* Build configuration list for PBXNativeTarget "TodaysCafe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				56734CE026A15F88006EB938 /* Debug */,
