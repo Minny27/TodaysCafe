@@ -104,7 +104,7 @@ extension HomeViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         let tagInfo = tagViewModel.tagInfo(at: indexPath.item)
-        cell.update(tagInfo: tagInfo)
+        cell.update(tagInfo: tagInfo)   
         return cell
     }
 }

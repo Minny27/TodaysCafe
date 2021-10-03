@@ -67,8 +67,6 @@
 		56D2AC5326BA9E3700BC6F0D /* TagViewModel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewModel2.swift; sourceTree = "<group>"; };
 		56E3424E26C1301200902F3D /* CafeBlogTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeBlogTableViewController.swift; sourceTree = "<group>"; };
 		5ABE1146437B20F335C6115E /* Pods-Todays_Cafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todays_Cafe.debug.xcconfig"; path = "Target Support Files/Pods-Todays_Cafe/Pods-Todays_Cafe.debug.xcconfig"; sourceTree = "<group>"; };
-		5ED8C09C1118B6AEC552A177 /* Pods-Todays_Cafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todays_Cafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-Todays_Cafe/Pods-Todays_Cafe.release.xcconfig"; sourceTree = "<group>"; };
-		717CDD4FBF1C79F70B13420B /* Pods-Todays_Cafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todays_Cafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Todays_Cafe/Pods-Todays_Cafe.debug.xcconfig"; sourceTree = "<group>"; };
 		B4BB02AA72C42A975256BE27 /* Pods-Todays_Cafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todays_Cafe.release.xcconfig"; path = "Target Support Files/Pods-Todays_Cafe/Pods-Todays_Cafe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,8 +87,6 @@
 			children = (
 				5ABE1146437B20F335C6115E /* Pods-Todays_Cafe.debug.xcconfig */,
 				B4BB02AA72C42A975256BE27 /* Pods-Todays_Cafe.release.xcconfig */,
-				717CDD4FBF1C79F70B13420B /* Pods-Todays_Cafe.debug.xcconfig */,
-				5ED8C09C1118B6AEC552A177 /* Pods-Todays_Cafe.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
