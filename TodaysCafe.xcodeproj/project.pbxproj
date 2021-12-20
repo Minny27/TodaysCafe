@@ -178,8 +178,8 @@
 		569FB47F26A7E65100A93B08 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				56734CD926A15F88006EB938 /* LaunchScreen.storyboard */,
 				56734CD426A15F87006EB938 /* Main.storyboard */,
+				56734CD926A15F88006EB938 /* LaunchScreen.storyboard */,
 				5615B3BA26A94454005BCE25 /* TagCollectionViewCell.swift */,
 				56D2AC5026BA9E2200BC6F0D /* ThemaCollectionViewCell.swift */,
 				562CDCB826BC468100C2906D /* AreaCollecionViewCell.swift */,
