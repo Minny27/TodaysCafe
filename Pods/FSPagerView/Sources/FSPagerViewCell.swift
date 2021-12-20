@@ -23,8 +23,8 @@ open class FSPagerViewCell: UICollectionViewCell {
         let textLabel = UILabel(frame: .zero)
         textLabel.textColor = .white
         textLabel.font = UIFont.preferredFont(forTextStyle: .body)
-        textLabel.font = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
-        textLabel.textAlignment = .center
+        textLabel.font = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize) // 추가
+        textLabel.textAlignment = .center // 추가
         self.contentView.addSubview(view)
         view.addSubview(textLabel)
         
@@ -124,9 +124,9 @@ open class FSPagerViewCell: UICollectionViewCell {
             textLabel.superview!.frame = {
                 var rect = self.contentView.bounds
 //                let height = textLabel.font.pointSize*1.5
-                let height = CGFloat(220)
+                let height = CGFloat(220) // 추가
                 rect.size.height = height
-                rect.origin.y = self.contentView.frame.height - height
+                rect.origin.y = self.contentView.frame.height-height
                 return rect
             }()
             textLabel.frame = {
