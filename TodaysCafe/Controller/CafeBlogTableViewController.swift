@@ -63,6 +63,8 @@ class CafeBlogTableViewController: UIViewController {
                 return
             }
             
+            print(document)
+            
             for blogIndex in 1...10 {
                 let blogIndex = String(blogIndex)
 
@@ -140,7 +142,7 @@ class CafeBlogTableViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let cafeBlogDetailViewController = segue.destination as? CafeBlogDetailViewController else { return }
         if let blogInfo = sender as? CafeBlogCellInfo {
-            cafeBlogDetailViewController.cafeBlogURL = blogInfo.blogDetailUrl
+            cafeBlogDetailViewController.cafeBlogUrlString = blogInfo.blogDetailUrl
         }
     }
     

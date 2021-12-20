@@ -9,7 +9,7 @@ import UIKit
 import WebKit
 
 class CafeBlogDetailViewController: UIViewController {
-    var cafeBlogURL: String = ""
+    var cafeBlogUrlString: String = ""
     
     @IBOutlet var cafeBlogDetailView: WKWebView!
     
@@ -25,7 +25,7 @@ class CafeBlogDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
 
-        loadWebView(cafeBlogURL)
+        loadWebView(cafeBlogUrlString)
     }
     
     func loadWebView(_ blogDetailUrl: String) {
