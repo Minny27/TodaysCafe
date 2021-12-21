@@ -17,4 +17,4 @@
 - StoryBoard
 - MVVM Pattern
 - SwiftSoup
-- CoreData
+- Core Data
