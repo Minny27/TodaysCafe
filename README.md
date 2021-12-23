@@ -14,7 +14,8 @@
 - 개인 프로젝트
 
 ## 기술
-- StoryBoard
-- MVVM Pattern
-- SwiftSoup
-- Core Data
+- **StoryBoard**
+- **MVVM Pattern**
+- **FSPagerView**
+- **SwiftSoup**
+- **Core Data**
