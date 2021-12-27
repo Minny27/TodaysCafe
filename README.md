@@ -1,7 +1,7 @@
 <img src=https://img.shields.io/badge/platform-iOS-blue>  <img src = https://img.shields.io/badge/Swift-5.5-orange.svg>
 
 ## TodaysCafe
-- 자신이 원하는 테마의 카페를 추천해주는 앱
+- 원하는 테마의 카페를 추천해주는 앱
 
 <br>
 
