@@ -5,7 +5,7 @@
 
 <img src=https://user-images.githubusercontent.com/68800789/146768046-b9ebbe6f-114d-4f2f-9076-91bbe9d52861.gif width="25%">
 
-<img src="https://user-images.githubusercontent.com/68800789/147534599-3088b621-2e9b-48bf-affe-97756321704a.png" width="18%"> <img src="https://user-images.githubusercontent.com/68800789/147534605-617ac883-140a-4945-8e43-264eee85eb86.png" width="18%"> <img src="https://user-images.githubusercontent.com/68800789/147534654-68a366e3-7456-4e3c-a14d-b54642006cad.png" width="18%"> <img src="https://user-images.githubusercontent.com/68800789/147534643-bb790477-78e8-4615-94b7-45c43aa3f013.png" width="18%"> <img src="https://user-images.githubusercontent.com/68800789/147534612-e666743e-4d5e-41fa-8bfa-c39b49a3c2f7.png" width="18%">
+<img src="https://user-images.githubusercontent.com/68800789/147535751-73e49109-87a7-4554-8dde-d4d4e2aa847a.png" width="18%"> <img src="https://user-images.githubusercontent.com/68800789/147535760-d9af00cb-9f2a-4612-8a63-ebc6def671dc.png" width="18%"> <img src="https://user-images.githubusercontent.com/68800789/147535766-f1158fa2-617f-4da0-9c6c-6cf9ac4b08af.png" width="18%"> <img src="https://user-images.githubusercontent.com/68800789/147535767-25a4c502-a251-4b80-9299-ce4a02684263.png" width="18%"> <img src="https://user-images.githubusercontent.com/68800789/147535762-ec28e10f-be6d-49ff-9e49-f6dad46acd77.png" width="18%">
 
 ## 기간
 - 2021.07 ~ 2021.09 (약 2개월)
